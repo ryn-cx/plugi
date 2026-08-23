@@ -27,12 +27,14 @@ SIGNED_HEADERS = "content-type"
 """The only header that is covered by the signature."""
 
 
+# TODO: Validate
 def code_verifier() -> str:
     """Return a random code verifier for a signing key request."""
     # 16 bytes to match the web player.
     return secrets.token_hex(16)
 
 
+# TODO: Validate
 def code_challenge(verifier: str) -> str:
     """Return the challenge that proves ownership of `verifier`.
 
@@ -46,11 +48,13 @@ def code_challenge(verifier: str) -> str:
     return base64.urlsafe_b64encode(digest).decode()
 
 
+# TODO: Validate
 def timestamp(now: datetime) -> str:
     """Return `now` formatted the way the signature expects it."""
     return now.strftime("%Y%m%dT%H%M%SZ")
 
 
+# TODO: Validate
 def signature_params(
     body: str,
     signing_key: str,

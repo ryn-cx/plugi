@@ -4,19 +4,21 @@
 from __future__ import annotations
 
 from logging import NullHandler, getLogger
-from typing import Any, override
+from typing import Any
 
 from plugi.base_api_endpoint import BaseEndpoint
-from plugi.content.models import ContentModel
+from plugi.content.models import ContentModel, model_validate_json
 from plugi.exceptions import ContentNotFoundError, ResourceNotFoundError
 
 logger = getLogger(__name__)
 logger.addHandler(NullHandler())
 
 PAGE_SIZE_IN_SEASON = 20
+"""Episodes a page of a season holds, which is what the website asks for."""
 
 
-class Content(BaseEndpoint[ContentModel]):
+# TODO: Validate
+class Content(BaseEndpoint):
     """Manage the content file.
 
     A movie, a series, or a single episode are all content, the `type` field of
@@ -57,9 +59,30 @@ class Content(BaseEndpoint[ContentModel]):
         - TE: trailers
     """
 
-    _response_model = ContentModel
+    # TODO: Validate
+    def __call__(
+        self,
+        content_id: str,
+        *,
+        season: int | None = None,
+        page_in_season: int = 1,
+        page_size_in_season: int = PAGE_SIZE_IN_SEASON,
+        include_channels: bool = True,
+    ) -> ContentModel:
+        """Look the content up and return the model it is read into."""
+        log_id = self.get_log_id(self.__call__, locals())
+        return self.load(
+            self.download(
+                content_id,
+                season=season,
+                page_in_season=page_in_season,
+                page_size_in_season=page_size_in_season,
+                include_channels=include_channels,
+            ),
+            log_id,
+        )
 
-    @override
+    # TODO: Validate
     def download(
         self,
         content_id: str,
@@ -68,7 +91,8 @@ class Content(BaseEndpoint[ContentModel]):
         page_in_season: int = 1,
         page_size_in_season: int = PAGE_SIZE_IN_SEASON,
         include_channels: bool = True,
-    ) -> dict[str, Any]:
+    ) -> str:
+        """Download the content file."""
         log_id = self.get_log_id(self.download, locals())
         # The image renditions and video resources are the ones the website asks
         # for, they decide which images and streams are returned.
@@ -118,22 +142,7 @@ class Content(BaseEndpoint[ContentModel]):
                 err.response,
             ) from err
 
-    @override
-    def download_and_parse(
-        self,
-        content_id: str,
-        *,
-        season: int | None = None,
-        page_in_season: int = 1,
-        page_size_in_season: int = PAGE_SIZE_IN_SEASON,
-        include_channels: bool = True,
-    ) -> ContentModel:
-        return self.parse(
-            self.download(
-                content_id,
-                season=season,
-                page_in_season=page_in_season,
-                page_size_in_season=page_size_in_season,
-                include_channels=include_channels,
-            ),
-        )
+    # TODO: Validate
+    def load(self, data: str, log_id: str = "") -> ContentModel:
+        """Read a downloaded content file into its model."""
+        return model_validate_json(data, log_id or type(self).__name__)

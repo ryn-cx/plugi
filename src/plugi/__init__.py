@@ -14,24 +14,35 @@ from get_around import GetAround
 from plugi import authorization
 from plugi.content import Content
 from plugi.exceptions import AuthorizationError, HTTPError, ResourceNotFoundError
+from plugi.search import Search
 
 logger = getLogger(__name__)
 logger.addHandler(NullHandler())
 
 WEBSITE = "https://tubitv.com"
 PLATFORM = "web"
+# Tubi splits its API across hosts that otherwise take the same parameters, and
+# this one answers for everything except search.
+CONTENT_DOMAIN = "content-cdn.production-public.tubi.io"
 
 
+# TODO: Validate
 class Plugi:
     """Tubi API wrapper."""
 
+    # TODO: Validate
     def __init__(
         self,
         get_around_client: GetAround | None = None,
         locale: str = "en-US",
         device_id: str | None = None,
     ) -> None:
-        """Initializes the Plugi client."""
+        """Initialize the Plugi client.
+
+        The client holds one attribute per endpoint, so `client.content(id)`
+        looks a content up and `client.content.download(id)` and
+        `client.content.load(data)` are the halves of it.
+        """
         self.locale = locale
         self.get_around_client = get_around_client or GetAround()
         # Tubi ties an anonymous token to a device, any UUID is accepted.
@@ -40,7 +51,9 @@ class Plugi:
         self._token_expires_at = datetime.now(tz=UTC)
 
         self.content = Content(self)
+        self.search = Search(self)
 
+    # TODO: Validate
     def _headers(self) -> dict[str, str]:
         return {
             # "Host": Set by httpx
@@ -55,14 +68,16 @@ class Plugi:
             "Sec-Fetch-Site": "cross-site",
         }
 
+    # TODO: Validate
     @property
     def _access_token(self) -> str:
         if not self._access_token_value or self._token_expires_at < datetime.now(UTC):
             self._download_access_token()
         return self._access_token_value
 
+    # TODO: Validate
     def _download_signing_key(self, verifier: str) -> dict[str, str]:
-        """Requests the key that the token request is signed with."""
+        """Request the key that the token request is signed with."""
         response = self.get_around_client.post(
             f"https://{authorization.ACCOUNT_DOMAIN}/device/anonymous/signing_key",
             json={
@@ -76,8 +91,10 @@ class Plugi:
         )
         if response.status_code != HTTPStatus.OK:
             raise AuthorizationError(response.status_code, response.text)
-        return response.json()
+        signing_key: dict[str, str] = response.json()
+        return signing_key
 
+    # TODO: Validate
     def _download_access_token(self) -> None:
         logger.debug("Downloading token:")
         start = time.monotonic()
@@ -113,14 +130,20 @@ class Plugi:
             seconds=parsed["expires_in"],
         )
 
+    # TODO: Validate
     def download(
         self,
         endpoint: str,
         params: dict[str, Any],
         headers: dict[str, str],
         log_id: str,
-    ) -> dict[str, Any]:
-        """Downloads from the API."""
+        domain: str = CONTENT_DOMAIN,
+    ) -> str:
+        """Download from the API and return the body as text.
+
+        `domain` selects the host the endpoint lives on, because Tubi splits its
+        API across hosts that otherwise take the same parameters and token.
+        """
         headers = {
             **self._headers(),
             "Accept-Version": "~5.0.0",
@@ -135,7 +158,7 @@ class Plugi:
         }
 
         logger.debug("Downloading: %s", log_id)
-        url = f"https://content-cdn.production-public.tubi.io/{endpoint}"
+        url = f"https://{domain}/{endpoint}"
         start = time.monotonic()
         response = self.get_around_client.get(url, params=params, headers=headers)
 
@@ -145,4 +168,4 @@ class Plugi:
             raise HTTPError(response.status_code, response.text)
 
         logger.debug("Downloaded %s (%.4f s)", log_id, time.monotonic() - start)
-        return response.json()
+        return response.text
