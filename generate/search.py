@@ -11,29 +11,20 @@ from generate.constants import FILES_PATH, PLUGI_PATH
 from generate.utils import download_if_missing, load_ids, rebuild_model
 from plugi import Plugi
 
-QUERIES = load_ids("SearchModel")
-
-KIDS_MODE_QUERY = "drago"
-KIDS_MODE_NAME = f"{KIDS_MODE_QUERY} kids mode"
-"""The recording of the same query with kids mode turned on."""
+SEARCH_REQUESTS = load_ids("SearchModel")
+"""What each recording of a search response was downloaded with."""
 
 
 # TODO: Validate
 def generate_search(client: Plugi) -> None:
     """Rebuild SearchModel."""
-    for query in QUERIES:
+    for name, arguments in SEARCH_REQUESTS.items():
         download_if_missing(
             FILES_PATH,
             "SearchModel",
-            query,
-            lambda query=query: client.search.download(query),
+            name,
+            lambda arguments=arguments: client.search.download(**arguments),
         )
-    download_if_missing(
-        FILES_PATH,
-        "SearchModel",
-        KIDS_MODE_NAME,
-        lambda: client.search.download(KIDS_MODE_QUERY, is_kids_mode=True),
-    )
     rebuild_model(FILES_PATH, PLUGI_PATH, "SearchModel")
 
 

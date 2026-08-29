@@ -11,30 +11,20 @@ from generate.constants import FILES_PATH, PLUGI_PATH
 from generate.utils import download_if_missing, load_ids, rebuild_model
 from plugi import Plugi
 
-CONTENT_IDS = load_ids("ContentModel")
-
-SEASON_CONTENT_ID = "300018492"
-SEASON = 2
-SEASON_NAME = f"{SEASON_CONTENT_ID} season {SEASON}"
-"""The recording of the series asked for one season at a time."""
+CONTENT_REQUESTS = load_ids("ContentModel")
+"""What each recording of a content response was downloaded with."""
 
 
 # TODO: Validate
 def generate_content(client: Plugi) -> None:
     """Rebuild ContentModel."""
-    for content_id in CONTENT_IDS:
+    for name, arguments in CONTENT_REQUESTS.items():
         download_if_missing(
             FILES_PATH,
             "ContentModel",
-            content_id,
-            lambda content_id=content_id: client.content.download(content_id),
+            name,
+            lambda arguments=arguments: client.content.download(**arguments),
         )
-    download_if_missing(
-        FILES_PATH,
-        "ContentModel",
-        SEASON_NAME,
-        lambda: client.content.download(SEASON_CONTENT_ID, season=SEASON),
-    )
     rebuild_model(FILES_PATH, PLUGI_PATH, "ContentModel")
 
 
