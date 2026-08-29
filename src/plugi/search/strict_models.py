@@ -1,20 +1,24 @@
 from typing import Self
 from pydantic import ModelWrapValidatorHandler, PrivateAttr, model_validator
+from pydantic import ConfigDict
 from typing import Any
 from uuid import UUID
 from pydantic import AwareDatetime, BaseModel, Field
 
 class VideoPreview(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     url: str
     uuid: UUID
 
 class Rating(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Images(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -28,6 +32,7 @@ class Images(BaseModel):
     title_art: list[str]
 
 class Field0300014191(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -67,6 +72,7 @@ class Field0300014191(BaseModel):
     title: str
 
 class Field100060161(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -106,11 +112,13 @@ class Field100060161(BaseModel):
     title: str
 
 class Trailer(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     id: str
     url: str
     duration: int
 
 class Field522066(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -151,6 +159,7 @@ class Field522066(BaseModel):
     title: str
 
 class Images3(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -164,6 +173,7 @@ class Images3(BaseModel):
     title_art: list[None]
 
 class Field0300012908(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -203,6 +213,7 @@ class Field0300012908(BaseModel):
     title: str
 
 class Field100000645(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -242,6 +253,7 @@ class Field100000645(BaseModel):
     title: str
 
 class Field100026239(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -281,6 +293,7 @@ class Field100026239(BaseModel):
     title: str
 
 class Field02284(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -320,6 +333,7 @@ class Field02284(BaseModel):
     title: str
 
 class Images7(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -333,6 +347,7 @@ class Images7(BaseModel):
     title_art: list[str]
 
 class Field0300014190(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -372,16 +387,19 @@ class Field0300014190(BaseModel):
     title: str
 
 class Descriptor(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     description: str
 
 class Rating8(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Images8(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -395,6 +413,7 @@ class Images8(BaseModel):
     title_art: list[None]
 
 class Field0300004799(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -434,12 +453,14 @@ class Field0300004799(BaseModel):
     title: str
 
 class Rating9(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Field02283(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -479,6 +500,7 @@ class Field02283(BaseModel):
     title: str
 
 class Field0300014065(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -518,6 +540,7 @@ class Field0300014065(BaseModel):
     title: str
 
 class Field0300006778(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -557,6 +580,7 @@ class Field0300006778(BaseModel):
     title: str
 
 class Field100012076(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -597,6 +621,7 @@ class Field100012076(BaseModel):
     title: str
 
 class Field0300019067(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -636,6 +661,7 @@ class Field0300019067(BaseModel):
     title: str
 
 class Field0300017721(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -675,6 +701,7 @@ class Field0300017721(BaseModel):
     title: str
 
 class Field0300005619(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -714,6 +741,7 @@ class Field0300005619(BaseModel):
     title: str
 
 class Field589618(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -754,6 +782,7 @@ class Field589618(BaseModel):
     title: str
 
 class Field0300019090(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -793,6 +822,7 @@ class Field0300019090(BaseModel):
     title: str
 
 class Field100000634(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -832,6 +862,7 @@ class Field100000634(BaseModel):
     title: str
 
 class Field100008189(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -872,6 +903,7 @@ class Field100008189(BaseModel):
     title: str
 
 class Images20(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -885,6 +917,7 @@ class Images20(BaseModel):
     title_art: list[str]
 
 class Field100054199(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -925,12 +958,14 @@ class Field100054199(BaseModel):
     title: str
 
 class Rating21(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Field03455(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -970,12 +1005,14 @@ class Field03455(BaseModel):
     title: str
 
 class Rating22(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Images22(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -989,6 +1026,7 @@ class Images22(BaseModel):
     title_art: list[None]
 
 class Field624896(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1028,6 +1066,7 @@ class Field624896(BaseModel):
     title: str
 
 class Field100000646(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1067,6 +1106,7 @@ class Field100000646(BaseModel):
     title: str
 
 class Field100026426(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1107,6 +1147,7 @@ class Field100026426(BaseModel):
     title: str
 
 class Field684388(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1147,6 +1188,7 @@ class Field684388(BaseModel):
     title: str
 
 class Field307561(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -1187,6 +1229,7 @@ class Field307561(BaseModel):
     title: str
 
 class Images27(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -1200,6 +1243,7 @@ class Images27(BaseModel):
     title_art: list[str]
 
 class Field638334(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1240,6 +1284,7 @@ class Field638334(BaseModel):
     title: str
 
 class Images28(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -1253,6 +1298,7 @@ class Images28(BaseModel):
     title_art: list[None]
 
 class Field100046456(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -1293,6 +1339,7 @@ class Field100046456(BaseModel):
     title: str
 
 class Field0300019069(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1332,6 +1379,7 @@ class Field0300019069(BaseModel):
     title: str
 
 class Field589380(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -1372,6 +1420,7 @@ class Field589380(BaseModel):
     title: str
 
 class Field100010366(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1412,6 +1461,7 @@ class Field100010366(BaseModel):
     title: str
 
 class Images32(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -1425,6 +1475,7 @@ class Images32(BaseModel):
     title_art: list[str]
 
 class Field100021025(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1464,12 +1515,14 @@ class Field100021025(BaseModel):
     title: str
 
 class Rating33(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Field03723(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1509,12 +1562,14 @@ class Field03723(BaseModel):
     title: str
 
 class Rating34(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Images34(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -1528,6 +1583,7 @@ class Images34(BaseModel):
     title_art: list[None]
 
 class Field0300019210(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1567,6 +1623,7 @@ class Field0300019210(BaseModel):
     title: str
 
 class Field0300010794(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1606,6 +1663,7 @@ class Field0300010794(BaseModel):
     title: str
 
 class Field03364(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1648,6 +1706,7 @@ class Field03364(BaseModel):
     title: str
 
 class Field100000640(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1687,6 +1746,7 @@ class Field100000640(BaseModel):
     title: str
 
 class Field568652(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1727,6 +1787,7 @@ class Field568652(BaseModel):
     title: str
 
 class Field0300005821(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1766,6 +1827,7 @@ class Field0300005821(BaseModel):
     title: str
 
 class Field0300004850(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1805,6 +1867,7 @@ class Field0300004850(BaseModel):
     title: str
 
 class Field0300019837(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1844,6 +1907,7 @@ class Field0300019837(BaseModel):
     title: str
 
 class Field708164(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1884,6 +1948,7 @@ class Field708164(BaseModel):
     title: str
 
 class Field0300010955(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1923,6 +1988,7 @@ class Field0300010955(BaseModel):
     title: str
 
 class Field100000638(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -1962,12 +2028,14 @@ class Field100000638(BaseModel):
     title: str
 
 class Rating45(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Field0300019074(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2007,12 +2075,14 @@ class Field0300019074(BaseModel):
     title: str
 
 class Rating46(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Field0300017793(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2052,6 +2122,7 @@ class Field0300017793(BaseModel):
     title: str
 
 class Images47(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -2065,6 +2136,7 @@ class Images47(BaseModel):
     title_art: list[str]
 
 class Field307850(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -2105,6 +2177,7 @@ class Field307850(BaseModel):
     title: str
 
 class Images48(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -2118,6 +2191,7 @@ class Images48(BaseModel):
     title_art: list[None]
 
 class Field0300008495(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2157,6 +2231,7 @@ class Field0300008495(BaseModel):
     title: str
 
 class Field0300018250(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2196,6 +2271,7 @@ class Field0300018250(BaseModel):
     title: str
 
 class Field100000641(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2235,6 +2311,7 @@ class Field100000641(BaseModel):
     title: str
 
 class Field530623(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -2275,6 +2352,7 @@ class Field530623(BaseModel):
     title: str
 
 class Field0300006854(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2314,6 +2392,7 @@ class Field0300006854(BaseModel):
     title: str
 
 class Field520091(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2354,6 +2433,7 @@ class Field520091(BaseModel):
     title: str
 
 class Field0300002072(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2393,6 +2473,7 @@ class Field0300002072(BaseModel):
     title: str
 
 class Field0300019082(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2432,6 +2513,7 @@ class Field0300019082(BaseModel):
     title: str
 
 class Field100000648(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2471,6 +2553,7 @@ class Field100000648(BaseModel):
     title: str
 
 class Field465427(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -2511,6 +2594,7 @@ class Field465427(BaseModel):
     title: str
 
 class Field0300000610(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2550,6 +2634,7 @@ class Field0300000610(BaseModel):
     title: str
 
 class Images59(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -2563,6 +2648,7 @@ class Images59(BaseModel):
     title_art: list[str]
 
 class Field313748(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2602,6 +2688,7 @@ class Field313748(BaseModel):
     title: str
 
 class Images60(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -2615,6 +2702,7 @@ class Images60(BaseModel):
     title_art: list[None]
 
 class Field100059946(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -2654,6 +2742,7 @@ class Field100059946(BaseModel):
     title: str
 
 class Field0300019078(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2693,6 +2782,7 @@ class Field0300019078(BaseModel):
     title: str
 
 class Field274712(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2732,6 +2822,7 @@ class Field274712(BaseModel):
     title: str
 
 class Field0300019076(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2771,6 +2862,7 @@ class Field0300019076(BaseModel):
     title: str
 
 class Images64(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -2784,6 +2876,7 @@ class Images64(BaseModel):
     title_art: list[str]
 
 class Field0300021614(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2823,12 +2916,14 @@ class Field0300021614(BaseModel):
     title: str
 
 class Rating65(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Field02067(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2868,12 +2963,14 @@ class Field02067(BaseModel):
     title: str
 
 class Rating66(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Images66(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -2887,6 +2984,7 @@ class Images66(BaseModel):
     title_art: list[None]
 
 class Field0300019449(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2926,12 +3024,14 @@ class Field0300019449(BaseModel):
     title: str
 
 class Rating67(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Field0300000604(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -2971,12 +3071,14 @@ class Field0300000604(BaseModel):
     title: str
 
 class Rating68(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Images68(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -2990,6 +3092,7 @@ class Images68(BaseModel):
     title_art: list[str]
 
 class Field0300007148(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3029,6 +3132,7 @@ class Field0300007148(BaseModel):
     title: str
 
 class Images69(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -3042,6 +3146,7 @@ class Images69(BaseModel):
     title_art: list[None]
 
 class Field0300019095(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3081,6 +3186,7 @@ class Field0300019095(BaseModel):
     title: str
 
 class Field100000644(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3120,6 +3226,7 @@ class Field100000644(BaseModel):
     title: str
 
 class Field0300004792(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3159,6 +3266,7 @@ class Field0300004792(BaseModel):
     title: str
 
 class Field0300021652(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3198,6 +3306,7 @@ class Field0300021652(BaseModel):
     title: str
 
 class Field0300013071(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3237,6 +3346,7 @@ class Field0300013071(BaseModel):
     title: str
 
 class Field100000637(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3276,6 +3386,7 @@ class Field100000637(BaseModel):
     title: str
 
 class Field0300019071(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3315,6 +3426,7 @@ class Field0300019071(BaseModel):
     title: str
 
 class Field100000643(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3354,6 +3466,7 @@ class Field100000643(BaseModel):
     title: str
 
 class Images77(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -3367,6 +3480,7 @@ class Images77(BaseModel):
     title_art: list[str]
 
 class Field100060110(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -3406,6 +3520,7 @@ class Field100060110(BaseModel):
     title: str
 
 class Field313749(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3445,6 +3560,7 @@ class Field313749(BaseModel):
     title: str
 
 class Field496979(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3484,6 +3600,7 @@ class Field496979(BaseModel):
     title: str
 
 class Images80(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -3497,6 +3614,7 @@ class Images80(BaseModel):
     title_art: list[None]
 
 class Field01965(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3536,6 +3654,7 @@ class Field01965(BaseModel):
     title: str
 
 class Field100040651(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -3576,6 +3695,7 @@ class Field100040651(BaseModel):
     title: str
 
 class Images82(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -3589,6 +3709,7 @@ class Images82(BaseModel):
     title_art: list[str]
 
 class Field680362(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -3629,6 +3750,7 @@ class Field680362(BaseModel):
     title: str
 
 class Images83(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -3642,6 +3764,7 @@ class Images83(BaseModel):
     title_art: list[None]
 
 class Field100000647(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3681,6 +3804,7 @@ class Field100000647(BaseModel):
     title: str
 
 class Field0300006629(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3720,6 +3844,7 @@ class Field0300006629(BaseModel):
     title: str
 
 class Field0300020297(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3762,6 +3887,7 @@ class Field0300020297(BaseModel):
     title: str
 
 class Field100000642(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3801,6 +3927,7 @@ class Field100000642(BaseModel):
     title: str
 
 class Field100000635(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3840,6 +3967,7 @@ class Field100000635(BaseModel):
     title: str
 
 class Images88(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -3853,6 +3981,7 @@ class Images88(BaseModel):
     title_art: list[str]
 
 class Field100029919(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -3893,6 +4022,7 @@ class Field100029919(BaseModel):
     title: str
 
 class Field512591(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3933,6 +4063,7 @@ class Field512591(BaseModel):
     title: str
 
 class Field0300014189(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -3972,6 +4103,7 @@ class Field0300014189(BaseModel):
     title: str
 
 class Field590932(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -4012,6 +4144,7 @@ class Field590932(BaseModel):
     title: str
 
 class Field04718(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4054,6 +4187,7 @@ class Field04718(BaseModel):
     title: str
 
 class Images93(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4067,6 +4201,7 @@ class Images93(BaseModel):
     title_art: list[None]
 
 class Field0300019077(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4106,6 +4241,7 @@ class Field0300019077(BaseModel):
     title: str
 
 class Field0300019075(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4145,6 +4281,7 @@ class Field0300019075(BaseModel):
     title: str
 
 class Field100000639(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4184,6 +4321,7 @@ class Field100000639(BaseModel):
     title: str
 
 class Images96(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4197,6 +4335,7 @@ class Images96(BaseModel):
     title_art: list[str]
 
 class Field100047631(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -4237,6 +4376,7 @@ class Field100047631(BaseModel):
     title: str
 
 class Field609723(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -4277,12 +4417,14 @@ class Field609723(BaseModel):
     title: str
 
 class Rating98(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Images98(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4296,6 +4438,7 @@ class Images98(BaseModel):
     title_art: list[None]
 
 class Field0300019408(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4335,12 +4478,14 @@ class Field0300019408(BaseModel):
     title: str
 
 class Rating99(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Field537347(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4380,6 +4525,7 @@ class Field537347(BaseModel):
     title: str
 
 class Images100(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4393,6 +4539,7 @@ class Images100(BaseModel):
     title_art: list[str]
 
 class Field0300021618(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4432,6 +4579,7 @@ class Field0300021618(BaseModel):
     title: str
 
 class Images101(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4445,6 +4593,7 @@ class Images101(BaseModel):
     title_art: list[None]
 
 class Field100000636(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4484,6 +4633,7 @@ class Field100000636(BaseModel):
     title: str
 
 class Field0300021419(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4523,6 +4673,7 @@ class Field0300021419(BaseModel):
     title: str
 
 class Field497116(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4562,6 +4713,7 @@ class Field497116(BaseModel):
     title: str
 
 class Images104(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4575,6 +4727,7 @@ class Images104(BaseModel):
     title_art: list[str]
 
 class Field559079(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -4615,13 +4768,16 @@ class Field559079(BaseModel):
     title: str
 
 class EpgFeed(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     callsign: str
     feed_type: str
 
 class Manifest(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     url: str
 
 class VideoResource(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     resolution: str
@@ -4629,16 +4785,19 @@ class VideoResource(BaseModel):
     ssai_version: str
 
 class Subtitle(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     url: str
     language: str
 
 class Schedule(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     start_time: AwareDatetime
     live: bool
     end_time: AwareDatetime
     program_id: str
 
 class Images105(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4652,6 +4811,7 @@ class Images105(BaseModel):
     title_art: list[None]
 
 class Field400000063(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: EpgFeed
@@ -4691,6 +4851,7 @@ class Field400000063(BaseModel):
     title: str
 
 class Field551234(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4730,6 +4891,7 @@ class Field551234(BaseModel):
     title: str
 
 class Field725756(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4769,6 +4931,7 @@ class Field725756(BaseModel):
     title: str
 
 class Field0300006061(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4808,6 +4971,7 @@ class Field0300006061(BaseModel):
     title: str
 
 class Field357881(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4847,6 +5011,7 @@ class Field357881(BaseModel):
     title: str
 
 class Images110(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4860,6 +5025,7 @@ class Images110(BaseModel):
     title_art: list[str]
 
 class Field580545(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -4900,6 +5066,7 @@ class Field580545(BaseModel):
     title: str
 
 class Images111(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4913,6 +5080,7 @@ class Images111(BaseModel):
     title_art: list[None]
 
 class Field0300016936(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -4952,6 +5120,7 @@ class Field0300016936(BaseModel):
     title: str
 
 class Images112(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -4965,6 +5134,7 @@ class Images112(BaseModel):
     title_art: list[str]
 
 class Field01075(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5004,6 +5174,7 @@ class Field01075(BaseModel):
     title: str
 
 class Images113(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5017,6 +5188,7 @@ class Images113(BaseModel):
     title_art: list[None]
 
 class Field600005(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5057,6 +5229,7 @@ class Field600005(BaseModel):
     title: str
 
 class Field626743(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5096,6 +5269,7 @@ class Field626743(BaseModel):
     title: str
 
 class Images115(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5109,6 +5283,7 @@ class Images115(BaseModel):
     title_art: list[str]
 
 class Field100013604(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5149,6 +5324,7 @@ class Field100013604(BaseModel):
     title: str
 
 class Images116(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5162,6 +5338,7 @@ class Images116(BaseModel):
     title_art: list[None]
 
 class Field673877(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5201,6 +5378,7 @@ class Field673877(BaseModel):
     title: str
 
 class Field100031065(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5241,6 +5419,7 @@ class Field100031065(BaseModel):
     title: str
 
 class Images118(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5254,6 +5433,7 @@ class Images118(BaseModel):
     title_art: list[str]
 
 class Field100053843(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5294,12 +5474,14 @@ class Field100053843(BaseModel):
     title: str
 
 class Rating119(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Field0300001390(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5342,12 +5524,14 @@ class Field0300001390(BaseModel):
     title: str
 
 class Rating120(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Field100003384(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5388,6 +5572,7 @@ class Field100003384(BaseModel):
     title: str
 
 class Images121(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5401,6 +5586,7 @@ class Images121(BaseModel):
     title_art: list[None]
 
 class Field541584(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5440,6 +5626,7 @@ class Field541584(BaseModel):
     title: str
 
 class Field441466(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5479,6 +5666,7 @@ class Field441466(BaseModel):
     title: str
 
 class Images123(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5492,6 +5680,7 @@ class Images123(BaseModel):
     title_art: list[str]
 
 class Field0300020964(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5531,6 +5720,7 @@ class Field0300020964(BaseModel):
     title: str
 
 class Field04558(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5570,6 +5760,7 @@ class Field04558(BaseModel):
     title: str
 
 class Images125(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5583,6 +5774,7 @@ class Images125(BaseModel):
     title_art: list[None]
 
 class Field100042985(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5622,6 +5814,7 @@ class Field100042985(BaseModel):
     title: str
 
 class Images126(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5635,6 +5828,7 @@ class Images126(BaseModel):
     title_art: list[str]
 
 class Field465664(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5674,6 +5868,7 @@ class Field465664(BaseModel):
     title: str
 
 class Field662394(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5714,6 +5909,7 @@ class Field662394(BaseModel):
     title: str
 
 class Field697540(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5753,6 +5949,7 @@ class Field697540(BaseModel):
     title: str
 
 class Images129(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5766,6 +5963,7 @@ class Images129(BaseModel):
     title_art: list[None]
 
 class Field100000893(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5806,6 +6004,7 @@ class Field100000893(BaseModel):
     title: str
 
 class Field713869(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5846,6 +6045,7 @@ class Field713869(BaseModel):
     title: str
 
 class Field710259(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5886,6 +6086,7 @@ class Field710259(BaseModel):
     title: str
 
 class Images132(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -5899,6 +6100,7 @@ class Images132(BaseModel):
     title_art: list[str]
 
 class Field590936(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -5939,12 +6141,14 @@ class Field590936(BaseModel):
     title: str
 
 class Rating133(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[Descriptor]
 
 class Field0300018951(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -5984,12 +6188,14 @@ class Field0300018951(BaseModel):
     title: str
 
 class Rating134(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class Images134(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6003,6 +6209,7 @@ class Images134(BaseModel):
     title_art: list[None]
 
 class Field0300011047(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6042,6 +6249,7 @@ class Field0300011047(BaseModel):
     title: str
 
 class Field599629(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6082,6 +6290,7 @@ class Field599629(BaseModel):
     title: str
 
 class Field0300021011(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6121,6 +6330,7 @@ class Field0300021011(BaseModel):
     title: str
 
 class Images137(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6134,6 +6344,7 @@ class Images137(BaseModel):
     title_art: list[str]
 
 class Field100014460(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6174,6 +6385,7 @@ class Field100014460(BaseModel):
     title: str
 
 class Images138(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6187,6 +6399,7 @@ class Images138(BaseModel):
     title_art: list[None]
 
 class Field536458(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6226,6 +6439,7 @@ class Field536458(BaseModel):
     title: str
 
 class Images139(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6239,6 +6453,7 @@ class Images139(BaseModel):
     title_art: list[str]
 
 class Field522098(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6279,6 +6494,7 @@ class Field522098(BaseModel):
     title: str
 
 class Images140(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6292,6 +6508,7 @@ class Images140(BaseModel):
     title_art: list[None]
 
 class Field100050998(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6332,6 +6549,7 @@ class Field100050998(BaseModel):
     title: str
 
 class Field484792(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6371,6 +6589,7 @@ class Field484792(BaseModel):
     title: str
 
 class Images142(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6384,6 +6603,7 @@ class Images142(BaseModel):
     title_art: list[str]
 
 class Field674605(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6426,6 +6646,7 @@ class Field674605(BaseModel):
     title: str
 
 class Images143(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6439,6 +6660,7 @@ class Images143(BaseModel):
     title_art: list[None]
 
 class Field100008293(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6478,6 +6700,7 @@ class Field100008293(BaseModel):
     title: str
 
 class Images144(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6491,6 +6714,7 @@ class Images144(BaseModel):
     title_art: list[str]
 
 class Field456845(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6533,6 +6757,7 @@ class Field456845(BaseModel):
     title: str
 
 class VideoResource1(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     resolution: str
@@ -6540,6 +6765,7 @@ class VideoResource1(BaseModel):
     ssai_version: str
 
 class Images145(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6553,6 +6779,7 @@ class Images145(BaseModel):
     title_art: list[None]
 
 class Field400000059(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: EpgFeed
@@ -6592,6 +6819,7 @@ class Field400000059(BaseModel):
     title: str
 
 class Field100004664(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6631,6 +6859,7 @@ class Field100004664(BaseModel):
     title: str
 
 class Field688915(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6670,6 +6899,7 @@ class Field688915(BaseModel):
     title: str
 
 class Field497642(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6710,6 +6940,7 @@ class Field497642(BaseModel):
     title: str
 
 class Field667134(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6749,6 +6980,7 @@ class Field667134(BaseModel):
     title: str
 
 class Images150(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6762,6 +6994,7 @@ class Images150(BaseModel):
     title_art: list[str]
 
 class Field646635(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6802,6 +7035,7 @@ class Field646635(BaseModel):
     title: str
 
 class Images151(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6815,6 +7049,7 @@ class Images151(BaseModel):
     title_art: list[None]
 
 class Field100044464(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6854,6 +7089,7 @@ class Field100044464(BaseModel):
     title: str
 
 class Images152(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6867,6 +7103,7 @@ class Images152(BaseModel):
     title_art: list[str]
 
 class Field0300021761(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6906,6 +7143,7 @@ class Field0300021761(BaseModel):
     title: str
 
 class Field456404(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -6946,6 +7184,7 @@ class Field456404(BaseModel):
     title: str
 
 class Images154(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -6959,6 +7198,7 @@ class Images154(BaseModel):
     title_art: list[None]
 
 class Field639644(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -6998,6 +7238,7 @@ class Field639644(BaseModel):
     title: str
 
 class Field100041606(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7038,6 +7279,7 @@ class Field100041606(BaseModel):
     title: str
 
 class Field0300013877(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7077,6 +7319,7 @@ class Field0300013877(BaseModel):
     title: str
 
 class Field715273(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -7117,6 +7360,7 @@ class Field715273(BaseModel):
     title: str
 
 class Images158(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7130,6 +7374,7 @@ class Images158(BaseModel):
     title_art: list[str]
 
 class Field03714(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7169,6 +7414,7 @@ class Field03714(BaseModel):
     title: str
 
 class Field01622(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7208,6 +7454,7 @@ class Field01622(BaseModel):
     title: str
 
 class VideoResource2(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     resolution: str
@@ -7215,6 +7462,7 @@ class VideoResource2(BaseModel):
     ssai_version: str
 
 class Images160(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7228,6 +7476,7 @@ class Images160(BaseModel):
     title_art: list[None]
 
 class Field724209(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: EpgFeed
@@ -7267,6 +7516,7 @@ class Field724209(BaseModel):
     title: str
 
 class Images161(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7280,6 +7530,7 @@ class Images161(BaseModel):
     title_art: list[str]
 
 class Field705476(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7320,6 +7571,7 @@ class Field705476(BaseModel):
     title: str
 
 class Images162(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7333,6 +7585,7 @@ class Images162(BaseModel):
     title_art: list[None]
 
 class Field100029709(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7373,6 +7626,7 @@ class Field100029709(BaseModel):
     title: str
 
 class Field0300016373(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7412,6 +7666,7 @@ class Field0300016373(BaseModel):
     title: str
 
 class Images164(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7425,6 +7680,7 @@ class Images164(BaseModel):
     title_art: list[str]
 
 class Field0300005101(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7467,6 +7723,7 @@ class Field0300005101(BaseModel):
     title: str
 
 class Images165(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7480,6 +7737,7 @@ class Images165(BaseModel):
     title_art: list[None]
 
 class Field464159(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -7523,6 +7781,7 @@ class Field464159(BaseModel):
     title: str
 
 class Field469276(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7565,6 +7824,7 @@ class Field469276(BaseModel):
     title: str
 
 class Field100058704(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -7605,6 +7865,7 @@ class Field100058704(BaseModel):
     title: str
 
 class Images168(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7618,6 +7879,7 @@ class Images168(BaseModel):
     title_art: list[str]
 
 class Field348095(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -7657,6 +7919,7 @@ class Field348095(BaseModel):
     title: str
 
 class Field100003132(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -7697,6 +7960,7 @@ class Field100003132(BaseModel):
     title: str
 
 class Field532498(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7737,6 +8001,7 @@ class Field532498(BaseModel):
     title: str
 
 class Images171(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -7750,6 +8015,7 @@ class Images171(BaseModel):
     title_art: list[None]
 
 class Field100060230(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7790,6 +8056,7 @@ class Field100060230(BaseModel):
     title: str
 
 class Field314504(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7832,6 +8099,7 @@ class Field314504(BaseModel):
     title: str
 
 class Field581265(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7871,6 +8139,7 @@ class Field581265(BaseModel):
     title: str
 
 class Field100015557(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7911,6 +8180,7 @@ class Field100015557(BaseModel):
     title: str
 
 class Field100042096(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -7951,6 +8221,7 @@ class Field100042096(BaseModel):
     title: str
 
 class Field515192(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -7991,6 +8262,7 @@ class Field515192(BaseModel):
     title: str
 
 class Field100014057(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8033,6 +8305,7 @@ class Field100014057(BaseModel):
     title: str
 
 class Images178(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8046,6 +8319,7 @@ class Images178(BaseModel):
     title_art: list[str]
 
 class Field654632(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -8086,6 +8360,7 @@ class Field654632(BaseModel):
     title: str
 
 class Images179(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8099,6 +8374,7 @@ class Images179(BaseModel):
     title_art: list[None]
 
 class Field100013642(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8139,6 +8415,7 @@ class Field100013642(BaseModel):
     title: str
 
 class Field100026989(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8178,6 +8455,7 @@ class Field100026989(BaseModel):
     title: str
 
 class Field551232(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8217,6 +8495,7 @@ class Field551232(BaseModel):
     title: str
 
 class Field517459(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8257,6 +8536,7 @@ class Field517459(BaseModel):
     title: str
 
 class Field367794(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8296,6 +8576,7 @@ class Field367794(BaseModel):
     title: str
 
 class Images184(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8309,6 +8590,7 @@ class Images184(BaseModel):
     title_art: list[str]
 
 class Field0300017682(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8348,6 +8630,7 @@ class Field0300017682(BaseModel):
     title: str
 
 class VideoResource3(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     resolution: str
@@ -8355,6 +8638,7 @@ class VideoResource3(BaseModel):
     ssai_version: str
 
 class Images185(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8368,6 +8652,7 @@ class Images185(BaseModel):
     title_art: list[None]
 
 class Field711410(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: EpgFeed
@@ -8407,6 +8692,7 @@ class Field711410(BaseModel):
     title: str
 
 class Field607950(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8447,6 +8733,7 @@ class Field607950(BaseModel):
     title: str
 
 class Field01630(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8486,6 +8773,7 @@ class Field01630(BaseModel):
     title: str
 
 class Field100031408(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8526,6 +8814,7 @@ class Field100031408(BaseModel):
     title: str
 
 class Images189(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8539,6 +8828,7 @@ class Images189(BaseModel):
     title_art: list[str]
 
 class Field100002884(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -8579,6 +8869,7 @@ class Field100002884(BaseModel):
     title: str
 
 class Field637768(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8618,6 +8909,7 @@ class Field637768(BaseModel):
     title: str
 
 class Field307852(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -8658,6 +8950,7 @@ class Field307852(BaseModel):
     title: str
 
 class Images192(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8671,6 +8964,7 @@ class Images192(BaseModel):
     title_art: list[None]
 
 class Field100010495(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -8711,6 +9005,7 @@ class Field100010495(BaseModel):
     title: str
 
 class Field100043292(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -8751,6 +9046,7 @@ class Field100043292(BaseModel):
     title: str
 
 class Field100013605(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -8791,6 +9087,7 @@ class Field100013605(BaseModel):
     title: str
 
 class Field551211(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8830,6 +9127,7 @@ class Field551211(BaseModel):
     title: str
 
 class Field625147(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8870,6 +9168,7 @@ class Field625147(BaseModel):
     title: str
 
 class Images197(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8883,6 +9182,7 @@ class Images197(BaseModel):
     title_art: list[str]
 
 class Field626678(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8922,6 +9222,7 @@ class Field626678(BaseModel):
     title: str
 
 class Images198(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8935,6 +9236,7 @@ class Images198(BaseModel):
     title_art: list[None]
 
 class Field02193(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -8974,6 +9276,7 @@ class Field02193(BaseModel):
     title: str
 
 class Images199(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -8987,6 +9290,7 @@ class Images199(BaseModel):
     title_art: list[str]
 
 class Field100026163(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9027,6 +9331,7 @@ class Field100026163(BaseModel):
     title: str
 
 class Images200(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9040,6 +9345,7 @@ class Images200(BaseModel):
     title_art: list[None]
 
 class Field100056524(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9079,6 +9385,7 @@ class Field100056524(BaseModel):
     title: str
 
 class Images201(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9092,6 +9399,7 @@ class Images201(BaseModel):
     title_art: list[str]
 
 class Field100061674(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9132,6 +9440,7 @@ class Field100061674(BaseModel):
     title: str
 
 class Images202(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9145,6 +9454,7 @@ class Images202(BaseModel):
     title_art: list[None]
 
 class Field100052322(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9184,6 +9494,7 @@ class Field100052322(BaseModel):
     title: str
 
 class Field367686(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9223,6 +9534,7 @@ class Field367686(BaseModel):
     title: str
 
 class Field591336(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9263,6 +9575,7 @@ class Field591336(BaseModel):
     title: str
 
 class Images205(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9276,6 +9589,7 @@ class Images205(BaseModel):
     title_art: list[str]
 
 class Field516885(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9315,6 +9629,7 @@ class Field516885(BaseModel):
     title: str
 
 class Images206(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9328,6 +9643,7 @@ class Images206(BaseModel):
     title_art: list[None]
 
 class Field100022552(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9368,6 +9684,7 @@ class Field100022552(BaseModel):
     title: str
 
 class Field0300006498(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9407,6 +9724,7 @@ class Field0300006498(BaseModel):
     title: str
 
 class Field0300021914(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9446,6 +9764,7 @@ class Field0300021914(BaseModel):
     title: str
 
 class Field0300013924(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9485,6 +9804,7 @@ class Field0300013924(BaseModel):
     title: str
 
 class Field372439(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9527,6 +9847,7 @@ class Field372439(BaseModel):
     title: str
 
 class Images211(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9540,6 +9861,7 @@ class Images211(BaseModel):
     title_art: list[str]
 
 class Field100002883(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9580,6 +9902,7 @@ class Field100002883(BaseModel):
     title: str
 
 class Images212(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9593,6 +9916,7 @@ class Images212(BaseModel):
     title_art: list[None]
 
 class Field0300014000(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9635,6 +9959,7 @@ class Field0300014000(BaseModel):
     title: str
 
 class Field663469(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9675,6 +10000,7 @@ class Field663469(BaseModel):
     title: str
 
 class Field415648(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9714,6 +10040,7 @@ class Field415648(BaseModel):
     title: str
 
 class Images215(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9727,6 +10054,7 @@ class Images215(BaseModel):
     title_art: list[str]
 
 class Field645252(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9767,6 +10095,7 @@ class Field645252(BaseModel):
     title: str
 
 class Images216(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9780,6 +10109,7 @@ class Images216(BaseModel):
     title_art: list[None]
 
 class Field610943(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9819,6 +10149,7 @@ class Field610943(BaseModel):
     title: str
 
 class Field100031673(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9858,6 +10189,7 @@ class Field100031673(BaseModel):
     title: str
 
 class Field100027986(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -9898,6 +10230,7 @@ class Field100027986(BaseModel):
     title: str
 
 class Field579182(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9938,6 +10271,7 @@ class Field579182(BaseModel):
     title: str
 
 class Images220(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -9951,6 +10285,7 @@ class Images220(BaseModel):
     title_art: list[str]
 
 class Field597242(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -9991,6 +10326,7 @@ class Field597242(BaseModel):
     title: str
 
 class Images221(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -10004,6 +10340,7 @@ class Images221(BaseModel):
     title_art: list[None]
 
 class Field0300017139(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10046,6 +10383,7 @@ class Field0300017139(BaseModel):
     title: str
 
 class Field0300015509(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10085,6 +10423,7 @@ class Field0300015509(BaseModel):
     title: str
 
 class Field100061356(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10124,6 +10463,7 @@ class Field100061356(BaseModel):
     title: str
 
 class Field551229(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10163,6 +10503,7 @@ class Field551229(BaseModel):
     title: str
 
 class Images225(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -10176,6 +10517,7 @@ class Images225(BaseModel):
     title_art: list[str]
 
 class Field708086(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10216,6 +10558,7 @@ class Field708086(BaseModel):
     title: str
 
 class Images226(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -10229,6 +10572,7 @@ class Images226(BaseModel):
     title_art: list[None]
 
 class Field602431(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10269,6 +10613,7 @@ class Field602431(BaseModel):
     title: str
 
 class Field100055498(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10309,6 +10654,7 @@ class Field100055498(BaseModel):
     title: str
 
 class Images228(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -10322,6 +10668,7 @@ class Images228(BaseModel):
     title_art: list[str]
 
 class Field587698(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10362,6 +10709,7 @@ class Field587698(BaseModel):
     title: str
 
 class Field100060818(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10402,6 +10750,7 @@ class Field100060818(BaseModel):
     title: str
 
 class Field0300001833(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10444,6 +10793,7 @@ class Field0300001833(BaseModel):
     title: str
 
 class Field621977(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10484,6 +10834,7 @@ class Field621977(BaseModel):
     title: str
 
 class Images232(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -10497,6 +10848,7 @@ class Images232(BaseModel):
     title_art: list[None]
 
 class Field646601(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10537,6 +10889,7 @@ class Field646601(BaseModel):
     title: str
 
 class Field100030213(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10577,6 +10930,7 @@ class Field100030213(BaseModel):
     title: str
 
 class Field329427(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10616,6 +10970,7 @@ class Field329427(BaseModel):
     title: str
 
 class Field410747(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10655,6 +11010,7 @@ class Field410747(BaseModel):
     title: str
 
 class Field469712(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10694,6 +11050,7 @@ class Field469712(BaseModel):
     title: str
 
 class Field594597(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10734,6 +11091,7 @@ class Field594597(BaseModel):
     title: str
 
 class Images238(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -10747,6 +11105,7 @@ class Images238(BaseModel):
     title_art: list[str]
 
 class Field100000184(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10787,6 +11146,7 @@ class Field100000184(BaseModel):
     title: str
 
 class Field02914(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10829,6 +11189,7 @@ class Field02914(BaseModel):
     title: str
 
 class Field0300006608(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -10868,6 +11229,7 @@ class Field0300006608(BaseModel):
     title: str
 
 class Field100000935(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10908,6 +11270,7 @@ class Field100000935(BaseModel):
     title: str
 
 class Field710385(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -10948,6 +11311,7 @@ class Field710385(BaseModel):
     title: str
 
 class Images243(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -10961,6 +11325,7 @@ class Images243(BaseModel):
     title_art: list[None]
 
 class Field100055397(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11001,6 +11366,7 @@ class Field100055397(BaseModel):
     title: str
 
 class Images244(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11014,6 +11380,7 @@ class Images244(BaseModel):
     title_art: list[str]
 
 class Field0300020390(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11056,6 +11423,7 @@ class Field0300020390(BaseModel):
     title: str
 
 class Images245(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11069,6 +11437,7 @@ class Images245(BaseModel):
     title_art: list[None]
 
 class Field100007129(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11109,6 +11478,7 @@ class Field100007129(BaseModel):
     title: str
 
 class Images246(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11122,6 +11492,7 @@ class Images246(BaseModel):
     title_art: list[str]
 
 class Field100060094(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11162,6 +11533,7 @@ class Field100060094(BaseModel):
     title: str
 
 class Field100021024(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11201,6 +11573,7 @@ class Field100021024(BaseModel):
     title: str
 
 class Field0300021495(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11240,6 +11613,7 @@ class Field0300021495(BaseModel):
     title: str
 
 class Images249(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11253,6 +11627,7 @@ class Images249(BaseModel):
     title_art: list[None]
 
 class Field100056127(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11293,6 +11668,7 @@ class Field100056127(BaseModel):
     title: str
 
 class Images250(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11306,6 +11682,7 @@ class Images250(BaseModel):
     title_art: list[str]
 
 class Field625477(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11346,6 +11723,7 @@ class Field625477(BaseModel):
     title: str
 
 class Images251(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11359,6 +11737,7 @@ class Images251(BaseModel):
     title_art: list[None]
 
 class Field303079(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11398,6 +11777,7 @@ class Field303079(BaseModel):
     title: str
 
 class Field100043297(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11438,6 +11818,7 @@ class Field100043297(BaseModel):
     title: str
 
 class Field0300017944(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11477,6 +11858,7 @@ class Field0300017944(BaseModel):
     title: str
 
 class Images254(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11490,6 +11872,7 @@ class Images254(BaseModel):
     title_art: list[str]
 
 class Field278532(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11530,6 +11913,7 @@ class Field278532(BaseModel):
     title: str
 
 class Images255(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11543,6 +11927,7 @@ class Images255(BaseModel):
     title_art: list[None]
 
 class Field312629(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11585,6 +11970,7 @@ class Field312629(BaseModel):
     title: str
 
 class Field100045807(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11624,6 +12010,7 @@ class Field100045807(BaseModel):
     title: str
 
 class Field0300020923(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11663,6 +12050,7 @@ class Field0300020923(BaseModel):
     title: str
 
 class Images258(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11676,6 +12064,7 @@ class Images258(BaseModel):
     title_art: list[str]
 
 class Field100039938(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11715,6 +12104,7 @@ class Field100039938(BaseModel):
     title: str
 
 class Images259(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11728,6 +12118,7 @@ class Images259(BaseModel):
     title_art: list[None]
 
 class Field02192(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11767,6 +12158,7 @@ class Field02192(BaseModel):
     title: str
 
 class Field567345(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -11806,6 +12198,7 @@ class Field567345(BaseModel):
     title: str
 
 class Field100057491(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11846,6 +12239,7 @@ class Field100057491(BaseModel):
     title: str
 
 class Field404573(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11885,6 +12279,7 @@ class Field404573(BaseModel):
     title: str
 
 class Images263(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -11898,6 +12293,7 @@ class Images263(BaseModel):
     title_art: list[str]
 
 class Field567311(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11938,6 +12334,7 @@ class Field567311(BaseModel):
     title: str
 
 class Field100061793(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -11978,6 +12375,7 @@ class Field100061793(BaseModel):
     title: str
 
 class Field461204(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -12017,6 +12415,7 @@ class Field461204(BaseModel):
     title: str
 
 class Images266(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12030,6 +12429,7 @@ class Images266(BaseModel):
     title_art: list[None]
 
 class Field100015524(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12070,6 +12470,7 @@ class Field100015524(BaseModel):
     title: str
 
 class Images267(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12083,6 +12484,7 @@ class Images267(BaseModel):
     title_art: list[str]
 
 class Field352450(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -12123,6 +12525,7 @@ class Field352450(BaseModel):
     title: str
 
 class Field0300006728(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12162,6 +12565,7 @@ class Field0300006728(BaseModel):
     title: str
 
 class Field634469(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12202,6 +12606,7 @@ class Field634469(BaseModel):
     title: str
 
 class Images270(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12215,6 +12620,7 @@ class Images270(BaseModel):
     title_art: list[None]
 
 class Field702498(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12255,6 +12661,7 @@ class Field702498(BaseModel):
     title: str
 
 class Images271(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12268,6 +12675,7 @@ class Images271(BaseModel):
     title_art: list[str]
 
 class Field473448(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -12307,6 +12715,7 @@ class Field473448(BaseModel):
     title: str
 
 class Images272(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12320,6 +12729,7 @@ class Images272(BaseModel):
     title_art: list[None]
 
 class Field100000588(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12360,6 +12770,7 @@ class Field100000588(BaseModel):
     title: str
 
 class Field709075(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12399,6 +12810,7 @@ class Field709075(BaseModel):
     title: str
 
 class Images274(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12412,6 +12824,7 @@ class Images274(BaseModel):
     title_art: list[str]
 
 class Field533892(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12452,6 +12865,7 @@ class Field533892(BaseModel):
     title: str
 
 class Images275(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12465,6 +12879,7 @@ class Images275(BaseModel):
     title_art: list[None]
 
 class Field713868(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12505,6 +12920,7 @@ class Field713868(BaseModel):
     title: str
 
 class Field594102(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -12545,6 +12961,7 @@ class Field594102(BaseModel):
     title: str
 
 class Field0300001752(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12587,6 +13004,7 @@ class Field0300001752(BaseModel):
     title: str
 
 class Field100042340(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -12627,6 +13045,7 @@ class Field100042340(BaseModel):
     title: str
 
 class VideoResource4(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     resolution: str
@@ -12634,6 +13053,7 @@ class VideoResource4(BaseModel):
     ssai_version: str
 
 class Field613761(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: EpgFeed
@@ -12673,6 +13093,7 @@ class Field613761(BaseModel):
     title: str
 
 class Images280(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12686,6 +13107,7 @@ class Images280(BaseModel):
     title_art: list[str]
 
 class Field100014266(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12726,6 +13148,7 @@ class Field100014266(BaseModel):
     title: str
 
 class Field0300022120(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12765,6 +13188,7 @@ class Field0300022120(BaseModel):
     title: str
 
 class Field651100(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -12805,6 +13229,7 @@ class Field651100(BaseModel):
     title: str
 
 class Images283(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12818,6 +13243,7 @@ class Images283(BaseModel):
     title_art: list[None]
 
 class Field04638(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12857,6 +13283,7 @@ class Field04638(BaseModel):
     title: str
 
 class Field100055253(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -12896,6 +13323,7 @@ class Field100055253(BaseModel):
     title: str
 
 class Field367684(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12935,6 +13363,7 @@ class Field367684(BaseModel):
     title: str
 
 class Images286(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -12948,6 +13377,7 @@ class Images286(BaseModel):
     title_art: list[str]
 
 class Field0931(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -12987,6 +13417,7 @@ class Field0931(BaseModel):
     title: str
 
 class Field658086(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13027,6 +13458,7 @@ class Field658086(BaseModel):
     title: str
 
 class Images288(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13040,6 +13472,7 @@ class Images288(BaseModel):
     title_art: list[None]
 
 class Field100060992(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13080,6 +13513,7 @@ class Field100060992(BaseModel):
     title: str
 
 class Field100004473(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13120,6 +13554,7 @@ class Field100004473(BaseModel):
     title: str
 
 class Field574326(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13160,6 +13595,7 @@ class Field574326(BaseModel):
     title: str
 
 class Field578316(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13200,6 +13636,7 @@ class Field578316(BaseModel):
     title: str
 
 class Field100055396(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13240,6 +13677,7 @@ class Field100055396(BaseModel):
     title: str
 
 class Field571846(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13279,6 +13717,7 @@ class Field571846(BaseModel):
     title: str
 
 class Images294(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13292,6 +13731,7 @@ class Images294(BaseModel):
     title_art: list[str]
 
 class Field01628(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13331,6 +13771,7 @@ class Field01628(BaseModel):
     title: str
 
 class Images295(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13344,6 +13785,7 @@ class Images295(BaseModel):
     title_art: list[None]
 
 class Field100026825(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13384,6 +13826,7 @@ class Field100026825(BaseModel):
     title: str
 
 class Images296(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13397,6 +13840,7 @@ class Images296(BaseModel):
     title_art: list[str]
 
 class Field537095(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13437,6 +13881,7 @@ class Field537095(BaseModel):
     title: str
 
 class Images297(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13450,6 +13895,7 @@ class Images297(BaseModel):
     title_art: list[None]
 
 class Field312200(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13490,6 +13936,7 @@ class Field312200(BaseModel):
     title: str
 
 class Images298(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13503,6 +13950,7 @@ class Images298(BaseModel):
     title_art: list[str]
 
 class Field100002689(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13546,6 +13994,7 @@ class Field100002689(BaseModel):
     title: str
 
 class Images299(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13559,6 +14008,7 @@ class Images299(BaseModel):
     title_art: list[None]
 
 class Field100055399(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13599,6 +14049,7 @@ class Field100055399(BaseModel):
     title: str
 
 class Images300(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13612,6 +14063,7 @@ class Images300(BaseModel):
     title_art: list[str]
 
 class Field0300021868(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13651,6 +14103,7 @@ class Field0300021868(BaseModel):
     title: str
 
 class Images301(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13664,6 +14117,7 @@ class Images301(BaseModel):
     title_art: list[None]
 
 class Field551295(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13703,6 +14157,7 @@ class Field551295(BaseModel):
     title: str
 
 class Images302(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13716,6 +14171,7 @@ class Images302(BaseModel):
     title_art: list[str]
 
 class Field100060087(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13756,6 +14212,7 @@ class Field100060087(BaseModel):
     title: str
 
 class Field100061634(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13795,6 +14252,7 @@ class Field100061634(BaseModel):
     title: str
 
 class Images304(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13808,6 +14266,7 @@ class Images304(BaseModel):
     title_art: list[None]
 
 class Field100061662(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13847,6 +14306,7 @@ class Field100061662(BaseModel):
     title: str
 
 class Field0300021298(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13886,6 +14346,7 @@ class Field0300021298(BaseModel):
     title: str
 
 class Images306(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13899,6 +14360,7 @@ class Images306(BaseModel):
     title_art: list[str]
 
 class Field283884(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -13938,6 +14400,7 @@ class Field283884(BaseModel):
     title: str
 
 class Images307(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -13951,6 +14414,7 @@ class Images307(BaseModel):
     title_art: list[None]
 
 class Field100000702(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -13991,6 +14455,7 @@ class Field100000702(BaseModel):
     title: str
 
 class Field488330(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -14030,6 +14495,7 @@ class Field488330(BaseModel):
     title: str
 
 class Field100004663(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14069,6 +14535,7 @@ class Field100004663(BaseModel):
     title: str
 
 class Field7954(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14108,6 +14575,7 @@ class Field7954(BaseModel):
     title: str
 
 class Field542244(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14147,6 +14615,7 @@ class Field542244(BaseModel):
     title: str
 
 class Field100019515(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14189,6 +14658,7 @@ class Field100019515(BaseModel):
     title: str
 
 class Field497327(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14229,6 +14699,7 @@ class Field497327(BaseModel):
     title: str
 
 class Images314(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14242,6 +14713,7 @@ class Images314(BaseModel):
     title_art: list[str]
 
 class Field543723(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -14282,6 +14754,7 @@ class Field543723(BaseModel):
     title: str
 
 class Images315(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14295,6 +14768,7 @@ class Images315(BaseModel):
     title_art: list[None]
 
 class Field367683(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14334,6 +14808,7 @@ class Field367683(BaseModel):
     title: str
 
 class Images316(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14347,6 +14822,7 @@ class Images316(BaseModel):
     title_art: list[str]
 
 class Field04294(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14389,6 +14865,7 @@ class Field04294(BaseModel):
     title: str
 
 class Images317(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14402,6 +14879,7 @@ class Images317(BaseModel):
     title_art: list[None]
 
 class Field642932(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14442,6 +14920,7 @@ class Field642932(BaseModel):
     title: str
 
 class Images318(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14455,6 +14934,7 @@ class Images318(BaseModel):
     title_art: list[str]
 
 class Field367685(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14494,6 +14974,7 @@ class Field367685(BaseModel):
     title: str
 
 class Images319(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14507,6 +14988,7 @@ class Images319(BaseModel):
     title_art: list[None]
 
 class Field0300021952(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14546,6 +15028,7 @@ class Field0300021952(BaseModel):
     title: str
 
 class Field0300009154(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14585,6 +15068,7 @@ class Field0300009154(BaseModel):
     title: str
 
 class Field100018504(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -14624,6 +15108,7 @@ class Field100018504(BaseModel):
     title: str
 
 class Field499567(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14664,6 +15149,7 @@ class Field499567(BaseModel):
     title: str
 
 class Field610954(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14703,6 +15189,7 @@ class Field610954(BaseModel):
     title: str
 
 class Field0300006856(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14742,6 +15229,7 @@ class Field0300006856(BaseModel):
     title: str
 
 class Images325(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14755,6 +15243,7 @@ class Images325(BaseModel):
     title_art: list[str]
 
 class Field568691(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14795,6 +15284,7 @@ class Field568691(BaseModel):
     title: str
 
 class Field312933(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -14835,6 +15325,7 @@ class Field312933(BaseModel):
     title: str
 
 class Images327(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -14848,6 +15339,7 @@ class Images327(BaseModel):
     title_art: list[None]
 
 class Field570192(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -14888,6 +15380,7 @@ class Field570192(BaseModel):
     title: str
 
 class Field100011760(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -14928,6 +15421,7 @@ class Field100011760(BaseModel):
     title: str
 
 class Field545087(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -14968,6 +15462,7 @@ class Field545087(BaseModel):
     title: str
 
 class Field646773(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15008,6 +15503,7 @@ class Field646773(BaseModel):
     title: str
 
 class Images331(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15021,6 +15517,7 @@ class Images331(BaseModel):
     title_art: list[str]
 
 class Field463724(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15063,6 +15560,7 @@ class Field463724(BaseModel):
     title: str
 
 class Images332(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15076,6 +15574,7 @@ class Images332(BaseModel):
     title_art: list[None]
 
 class Field100011465(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15115,6 +15614,7 @@ class Field100011465(BaseModel):
     title: str
 
 class Images333(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15128,6 +15628,7 @@ class Images333(BaseModel):
     title_art: list[str]
 
 class Field489048(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15167,6 +15668,7 @@ class Field489048(BaseModel):
     title: str
 
 class Images334(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15180,6 +15682,7 @@ class Images334(BaseModel):
     title_art: list[None]
 
 class Field475643(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15220,6 +15723,7 @@ class Field475643(BaseModel):
     title: str
 
 class Field289796(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15259,6 +15763,7 @@ class Field289796(BaseModel):
     title: str
 
 class Images336(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15272,6 +15777,7 @@ class Images336(BaseModel):
     title_art: list[str]
 
 class Field656811(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15312,6 +15818,7 @@ class Field656811(BaseModel):
     title: str
 
 class Images337(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15325,6 +15832,7 @@ class Images337(BaseModel):
     title_art: list[None]
 
 class Field100003678(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15364,6 +15872,7 @@ class Field100003678(BaseModel):
     title: str
 
 class Images338(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15377,6 +15886,7 @@ class Images338(BaseModel):
     title_art: list[str]
 
 class Field708292(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15417,6 +15927,7 @@ class Field708292(BaseModel):
     title: str
 
 class Field520251(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15457,6 +15968,7 @@ class Field520251(BaseModel):
     title: str
 
 class Images340(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15470,6 +15982,7 @@ class Images340(BaseModel):
     title_art: list[None]
 
 class Field0300008169(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15509,6 +16022,7 @@ class Field0300008169(BaseModel):
     title: str
 
 class Field278533(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15549,6 +16063,7 @@ class Field278533(BaseModel):
     title: str
 
 class Field100055398(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15589,6 +16104,7 @@ class Field100055398(BaseModel):
     title: str
 
 class Field528787(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15629,6 +16145,7 @@ class Field528787(BaseModel):
     title: str
 
 class Images344(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15642,6 +16159,7 @@ class Images344(BaseModel):
     title_art: list[str]
 
 class Field461216(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15682,6 +16200,7 @@ class Field461216(BaseModel):
     title: str
 
 class Images345(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -15695,6 +16214,7 @@ class Images345(BaseModel):
     title_art: list[None]
 
 class Field100013527(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15735,6 +16255,7 @@ class Field100013527(BaseModel):
     title: str
 
 class Field100043010(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15775,6 +16296,7 @@ class Field100043010(BaseModel):
     title: str
 
 class Field100038995(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -15815,6 +16337,7 @@ class Field100038995(BaseModel):
     title: str
 
 class Field100010530(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15854,6 +16377,7 @@ class Field100010530(BaseModel):
     title: str
 
 class Field100014462(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15894,6 +16418,7 @@ class Field100014462(BaseModel):
     title: str
 
 class Field100058177(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15936,6 +16461,7 @@ class Field100058177(BaseModel):
     title: str
 
 class Field100050578(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -15976,6 +16502,7 @@ class Field100050578(BaseModel):
     title: str
 
 class Field660063(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16015,6 +16542,7 @@ class Field660063(BaseModel):
     title: str
 
 class Images353(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16028,6 +16556,7 @@ class Images353(BaseModel):
     title_art: list[str]
 
 class Field694144(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -16068,6 +16597,7 @@ class Field694144(BaseModel):
     title: str
 
 class Images354(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16081,6 +16611,7 @@ class Images354(BaseModel):
     title_art: list[None]
 
 class Field575286(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -16120,6 +16651,7 @@ class Field575286(BaseModel):
     title: str
 
 class Field0300017688(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16159,6 +16691,7 @@ class Field0300017688(BaseModel):
     title: str
 
 class Images356(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16172,6 +16705,7 @@ class Images356(BaseModel):
     title_art: list[str]
 
 class Field0300019824(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16211,6 +16745,7 @@ class Field0300019824(BaseModel):
     title: str
 
 class Images357(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16224,6 +16759,7 @@ class Images357(BaseModel):
     title_art: list[None]
 
 class Field709637(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -16267,6 +16803,7 @@ class Field709637(BaseModel):
     title: str
 
 class Field0300009147(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16309,6 +16846,7 @@ class Field0300009147(BaseModel):
     title: str
 
 class Field100028012(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16349,6 +16887,7 @@ class Field100028012(BaseModel):
     title: str
 
 class Field703989(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -16389,6 +16928,7 @@ class Field703989(BaseModel):
     title: str
 
 class Images361(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16402,6 +16942,7 @@ class Images361(BaseModel):
     title_art: list[str]
 
 class Field678775(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -16442,6 +16983,7 @@ class Field678775(BaseModel):
     title: str
 
 class Images362(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16455,6 +16997,7 @@ class Images362(BaseModel):
     title_art: list[None]
 
 class Field551235(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16494,6 +17037,7 @@ class Field551235(BaseModel):
     title: str
 
 class Field100015110(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16533,6 +17077,7 @@ class Field100015110(BaseModel):
     title: str
 
 class Field100003659(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16572,6 +17117,7 @@ class Field100003659(BaseModel):
     title: str
 
 class Field100013522(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16614,6 +17160,7 @@ class Field100013522(BaseModel):
     title: str
 
 class Images366(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16627,6 +17174,7 @@ class Images366(BaseModel):
     title_art: list[str]
 
 class Field0300006607(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16666,6 +17214,7 @@ class Field0300006607(BaseModel):
     title: str
 
 class Images367(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16679,6 +17228,7 @@ class Images367(BaseModel):
     title_art: list[None]
 
 class Field692600(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16719,6 +17269,7 @@ class Field692600(BaseModel):
     title: str
 
 class VideoResource5(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     resolution: str
@@ -16726,6 +17277,7 @@ class VideoResource5(BaseModel):
     ssai_version: str
 
 class Field400000299(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: EpgFeed
@@ -16765,6 +17317,7 @@ class Field400000299(BaseModel):
     title: str
 
 class Images369(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16778,6 +17331,7 @@ class Images369(BaseModel):
     title_art: list[str]
 
 class Field100057546(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -16818,6 +17372,7 @@ class Field100057546(BaseModel):
     title: str
 
 class Images370(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -16831,6 +17386,7 @@ class Images370(BaseModel):
     title_art: list[None]
 
 class Field0300016553(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16870,6 +17426,7 @@ class Field0300016553(BaseModel):
     title: str
 
 class Field100057751(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16910,6 +17467,7 @@ class Field100057751(BaseModel):
     title: str
 
 class Field641862(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -16950,6 +17508,7 @@ class Field641862(BaseModel):
     title: str
 
 class Field100044686(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -16990,6 +17549,7 @@ class Field100044686(BaseModel):
     title: str
 
 class Images374(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17003,6 +17563,7 @@ class Images374(BaseModel):
     title_art: list[str]
 
 class Field610689(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -17043,6 +17604,7 @@ class Field610689(BaseModel):
     title: str
 
 class Images375(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17056,6 +17618,7 @@ class Images375(BaseModel):
     title_art: list[None]
 
 class Field530171(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17096,6 +17659,7 @@ class Field530171(BaseModel):
     title: str
 
 class Images376(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17109,6 +17673,7 @@ class Images376(BaseModel):
     title_art: list[str]
 
 class Field552210(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17148,6 +17713,7 @@ class Field552210(BaseModel):
     title: str
 
 class Images377(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17161,6 +17727,7 @@ class Images377(BaseModel):
     title_art: list[None]
 
 class Field100030646(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17201,6 +17768,7 @@ class Field100030646(BaseModel):
     title: str
 
 class Field698895(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17241,6 +17809,7 @@ class Field698895(BaseModel):
     title: str
 
 class Field100055412(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -17281,6 +17850,7 @@ class Field100055412(BaseModel):
     title: str
 
 class Field0300010267(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17320,6 +17890,7 @@ class Field0300010267(BaseModel):
     title: str
 
 class Field0300021897(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17359,6 +17930,7 @@ class Field0300021897(BaseModel):
     title: str
 
 class Images382(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17372,6 +17944,7 @@ class Images382(BaseModel):
     title_art: list[str]
 
 class Field0300013803(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17411,6 +17984,7 @@ class Field0300013803(BaseModel):
     title: str
 
 class Images383(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17424,6 +17998,7 @@ class Images383(BaseModel):
     title_art: list[None]
 
 class Field575310(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17463,6 +18038,7 @@ class Field575310(BaseModel):
     title: str
 
 class Field581281(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17502,6 +18078,7 @@ class Field581281(BaseModel):
     title: str
 
 class Images385(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17515,6 +18092,7 @@ class Images385(BaseModel):
     title_art: list[str]
 
 class Field100026654(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -17555,6 +18133,7 @@ class Field100026654(BaseModel):
     title: str
 
 class Images386(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17568,6 +18147,7 @@ class Images386(BaseModel):
     title_art: list[None]
 
 class Field100054211(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17608,6 +18188,7 @@ class Field100054211(BaseModel):
     title: str
 
 class Images387(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17621,6 +18202,7 @@ class Images387(BaseModel):
     title_art: list[str]
 
 class Field0300001104(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17660,6 +18242,7 @@ class Field0300001104(BaseModel):
     title: str
 
 class Images388(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17673,6 +18256,7 @@ class Images388(BaseModel):
     title_art: list[None]
 
 class Field100003590(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17712,6 +18296,7 @@ class Field100003590(BaseModel):
     title: str
 
 class Field100058204(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17752,6 +18337,7 @@ class Field100058204(BaseModel):
     title: str
 
 class Field0300021944(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17791,6 +18377,7 @@ class Field0300021944(BaseModel):
     title: str
 
 class Images391(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17804,6 +18391,7 @@ class Images391(BaseModel):
     title_art: list[str]
 
 class Field02348(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17846,6 +18434,7 @@ class Field02348(BaseModel):
     title: str
 
 class Field557050(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -17885,6 +18474,7 @@ class Field557050(BaseModel):
     title: str
 
 class Images393(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -17898,6 +18488,7 @@ class Images393(BaseModel):
     title_art: list[None]
 
 class Field521033(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -17938,6 +18529,7 @@ class Field521033(BaseModel):
     title: str
 
 class Field100038731(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -17978,6 +18570,7 @@ class Field100038731(BaseModel):
     title: str
 
 class Field0300010397(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18017,6 +18610,7 @@ class Field0300010397(BaseModel):
     title: str
 
 class Images396(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -18030,6 +18624,7 @@ class Images396(BaseModel):
     title_art: list[str]
 
 class Field472705(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18069,6 +18664,7 @@ class Field472705(BaseModel):
     title: str
 
 class Images397(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -18082,6 +18678,7 @@ class Images397(BaseModel):
     title_art: list[None]
 
 class Field688914(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18121,6 +18718,7 @@ class Field688914(BaseModel):
     title: str
 
 class Field466293(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18161,6 +18759,7 @@ class Field466293(BaseModel):
     title: str
 
 class Field04631(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18200,6 +18799,7 @@ class Field04631(BaseModel):
     title: str
 
 class Images400(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -18213,6 +18813,7 @@ class Images400(BaseModel):
     title_art: list[str]
 
 class Field615597(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18252,6 +18853,7 @@ class Field615597(BaseModel):
     title: str
 
 class Field0300006624(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18291,6 +18893,7 @@ class Field0300006624(BaseModel):
     title: str
 
 class Field100019823(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18330,6 +18933,7 @@ class Field100019823(BaseModel):
     title: str
 
 class Images403(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -18343,6 +18947,7 @@ class Images403(BaseModel):
     title_art: list[None]
 
 class Field100056268(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -18383,6 +18988,7 @@ class Field100056268(BaseModel):
     title: str
 
 class Field522136(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18423,6 +19029,7 @@ class Field522136(BaseModel):
     title: str
 
 class Field551215(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18462,6 +19069,7 @@ class Field551215(BaseModel):
     title: str
 
 class Field0300004774(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18504,6 +19112,7 @@ class Field0300004774(BaseModel):
     title: str
 
 class Field100038732(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -18544,6 +19153,7 @@ class Field100038732(BaseModel):
     title: str
 
 class Field551228(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: None
     year: int
     epg_feed: None
@@ -18583,6 +19193,7 @@ class Field551228(BaseModel):
     title: str
 
 class Images409(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -18596,6 +19207,7 @@ class Images409(BaseModel):
     title_art: list[str]
 
 class Field577086(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -18635,6 +19247,7 @@ class Field577086(BaseModel):
     title: str
 
 class Field464315(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     availability_ends: AwareDatetime
     year: int
     epg_feed: None
@@ -18675,6 +19288,7 @@ class Field464315(BaseModel):
     title: str
 
 class Contents(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     field_0300014191: Field0300014191 = Field(..., alias='0300014191')
     field_100060161: Field100060161 = Field(..., alias='100060161')
     field_522066: Field522066 | None = Field(None, alias='522066')
@@ -19088,16 +19702,19 @@ class Contents(BaseModel):
     field_464315: Field464315 | None = Field(None, alias='464315')
 
 class Item(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     id: str
     type: str
 
 class Container(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     description: str
     id: str
     items: list[Item]
     title: str
 
 class SearchModel(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     apps: dict[str, Any]
     contents: Contents
     valid_duration: int

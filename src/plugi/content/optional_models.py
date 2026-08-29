@@ -6,14 +6,14 @@ from uuid import UUID
 from pydantic import AwareDatetime, BaseModel, ConfigDict
 
 class Subtitle(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     url: str | None = None
     lang: str | None = None
     lang_alpha3: str | None = None
     lang_translation: str | None = None
 
 class CreditCuepoints(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     postlude: float | None = None
     prologue: float | None = None
     intro_start: float | None = None
@@ -25,25 +25,25 @@ class CreditCuepoints(BaseModel):
     prelogue: float | None = None
 
 class Rating(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     code: str | None = None
     system: str | None = None
     value: str | None = None
     descriptors: list[Any] | None = None
 
 class AudioTrack(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     type: str | None = None
     lang: str | None = None
     display_name: str | None = None
 
 class Manifest(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     url: str | None = None
     duration: int | None = None
 
 class VideoResource(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     type: str | None = None
     codec: str | None = None
     audio_tracks: list[AudioTrack] | None = None
@@ -54,15 +54,41 @@ class VideoResource(BaseModel):
     generator_version: str | None = None
 
 class Monetization(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     cue_points: list[float] | None = None
 
 class Awards(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     items: list[Any] | None = None
 
 class Images(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
+    backgrounds: list[str] | None = None
+    hero_16x9: list[str] | None = None
+    hero_422: list[str] | None = None
+    hero_feature: list[str] | None = None
+    hero_feature_desktop_tablet: list[str] | None = None
+    hero_feature_large_mobile: list[str] | None = None
+    hero_feature_small_mobile: list[str] | None = None
+    landscape_images: list[str] | None = None
+    linear_larger_poster: list[str] | None = None
+    posterarts: list[str] | None = None
+    title_art: list[str] | None = None
+
+class VideoMetadatum(BaseModel):
+    model_config = ConfigDict(extra='ignore', defer_build=True)
+    type: str | None = None
+    codec: str | None = None
+    resolution: str | None = None
+
+class VideoPreview(BaseModel):
+    model_config = ConfigDict(extra='ignore', defer_build=True)
+    source: str | None = None
+    url: str | None = None
+    uuid: UUID | None = None
+
+class Images1(BaseModel):
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     backgrounds: list[str] | None = None
     hero_16x9: list[str] | None = None
     hero_422: list[str] | None = None
@@ -75,20 +101,8 @@ class Images(BaseModel):
     posterarts: list[str] | None = None
     title_art: list[Any] | None = None
 
-class VideoMetadatum(BaseModel):
-    model_config = ConfigDict(extra='ignore')
-    type: str | None = None
-    codec: str | None = None
-    resolution: str | None = None
-
-class VideoPreview(BaseModel):
-    model_config = ConfigDict(extra='ignore')
-    source: str | None = None
-    url: str | None = None
-    uuid: UUID | None = None
-
 class VideoResource1(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     type: str | None = None
     codec: str | None = None
     audio_tracks: list[AudioTrack] | None = None
@@ -99,72 +113,72 @@ class VideoResource1(BaseModel):
     generator_version: str | None = None
 
 class Child1(BaseModel):
-    model_config = ConfigDict(extra='ignore')
-    is_cdc: bool | None = None
-    directors: list[str] | None = None
-    url: str | None = None
-    has_trailer: bool | None = None
-    air_datetime: Any | None = None
-    series_id: str | None = None
-    creator_tensor_app: Any | None = None
-    tubi_fields: dict[str, Any] | None = None
-    detailed_type: str | None = None
-    canonical_id: str | None = None
-    description: str | None = None
-    has_subtitle: bool | None = None
-    availability_ends: Any | None = None
-    ratings: list[Rating] | None = None
-    internal_tags: list[Any] | None = None
-    monetization: Monetization | None = None
-    video_renditions: list[Any] | None = None
-    player_type: str | None = None
-    type: str | None = None
-    import_id: str | None = None
-    imdb_id: Any | None = None
-    video_resources: list[VideoResource1] | None = None
-    lang: str | None = None
-    gracenote_id: str | None = None
-    trailers: list[Any] | None = None
-    country: str | None = None
-    posterarts: list[str] | None = None
-    video_metadata: list[Any] | None = None
-    needs_login: bool | None = None
-    video_previews: list[Any] | None = None
-    content_orientation: str | None = None
-    partner_id: Any | None = None
-    publisher_id: UUID | None = None
-    is_replay: bool | None = None
-    policy_match: bool | None = None
-    landscape_images: list[str] | None = None
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     episode_number: str | None = None
-    availability_duration: int | None = None
-    hero_images: list[str] | None = None
-    images: Images | None = None
-    id: str | None = None
-    updated_at: AwareDatetime | None = None
-    credit_cuepoints: CreditCuepoints | None = None
-    ad_languages: list[Any] | None = None
-    imdb_fields: Any | None = None
-    year: int | None = None
-    duration: int | None = None
-    version: int | None = None
-    backgrounds: list[str] | None = None
-    actors: list[str] | None = None
-    rt_fields: Any | None = None
-    login_reason: str | None = None
-    subtitles: list[Any] | None = None
+    internal_tags: list[Any] | None = None
     version_id: str | None = None
-    availability_starts: AwareDatetime | None = None
-    thumbnails: list[str] | None = None
+    content_orientation: str | None = None
     awards: Awards | None = None
-    tags: list[str] | None = None
-    gn_fields: Any | None = None
-    display_episode_number: str | None = None
-    title: str | None = None
+    player_type: str | None = None
+    is_replay: bool | None = None
+    canonical_id: str | None = None
     video_preview_url: str | None = None
+    description: str | None = None
+    gn_fields: Any | None = None
+    lang: str | None = None
+    directors: list[str] | None = None
+    video_renditions: list[Any] | None = None
+    images: Images1 | None = None
+    import_id: str | None = None
+    duration: int | None = None
+    publisher_id: UUID | None = None
+    needs_login: bool | None = None
+    ratings: list[Rating] | None = None
+    availability_starts: AwareDatetime | None = None
+    series_id: str | None = None
+    year: int | None = None
+    has_trailer: bool | None = None
+    type: str | None = None
+    tubi_fields: dict[str, Any] | None = None
+    landscape_images: list[str] | None = None
+    video_previews: list[Any] | None = None
+    display_episode_number: str | None = None
+    actors: list[str] | None = None
+    video_metadata: list[Any] | None = None
+    monetization: Monetization | None = None
+    country: str | None = None
+    trailers: list[Any] | None = None
+    video_resources: list[VideoResource1] | None = None
+    subtitles: list[Subtitle] | None = None
+    gracenote_id: str | None = None
+    backgrounds: list[str] | None = None
+    has_subtitle: bool | None = None
+    air_datetime: Any | None = None
+    imdb_fields: Any | None = None
+    ad_languages: list[Any] | None = None
+    credit_cuepoints: CreditCuepoints | None = None
+    partner_id: str | None = None
+    id: str | None = None
+    title: str | None = None
+    policy_match: bool | None = None
+    creator_tensor_app: Any | None = None
+    version: int | None = None
+    posterarts: list[str] | None = None
+    updated_at: AwareDatetime | None = None
+    hero_images: list[str] | None = None
+    availability_duration: int | None = None
+    rt_fields: Any | None = None
+    tags: list[str] | None = None
+    imdb_id: Any | None = None
+    thumbnails: list[str] | None = None
+    url: str | None = None
+    detailed_type: str | None = None
+    availability_ends: Any | None = None
+    is_cdc: bool | None = None
+    login_reason: str | None = None
 
 class Child(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     id: str | None = None
     type: str | None = None
     title: str | None = None
@@ -172,7 +186,7 @@ class Child(BaseModel):
     posterarts: list[Any] | None = None
 
 class ContentModel(BaseModel):
-    model_config = ConfigDict(extra='ignore')
+    model_config = ConfigDict(extra='ignore', defer_build=True)
     imdb_fields: Any | None = None
     channel_logo: str | None = None
     landscape_images: list[str] | None = None
@@ -194,7 +208,7 @@ class ContentModel(BaseModel):
     is_replay: bool | None = None
     channel_name: str | None = None
     thumbnails: list[str] | None = None
-    partner_id: Any | None = None
+    partner_id: str | None = None
     country: str | None = None
     video_resources: list[VideoResource] | None = None
     needs_login: bool | None = None
@@ -242,8 +256,8 @@ class ContentModel(BaseModel):
     series_id: str | None = None
     display_episode_number: str | None = None
     episode_number: str | None = None
-    is_recurring: bool | None = None
     is_sequential: bool | None = None
+    is_recurring: bool | None = None
     children: list[Child] | None = None
     _raw_input: Any = PrivateAttr(default=None)
 

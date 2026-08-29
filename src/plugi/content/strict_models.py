@@ -1,17 +1,20 @@
 from typing import Self
 from pydantic import ModelWrapValidatorHandler, PrivateAttr, model_validator
 from pydantic import Field
+from pydantic import ConfigDict
 from typing import Any
 from uuid import UUID
 from pydantic import AwareDatetime, BaseModel
 
 class Subtitle(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     url: str
     lang: str
     lang_alpha3: str
     lang_translation: str
 
 class CreditCuepoints(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     postlude: float
     prologue: float
     intro_start: float
@@ -23,21 +26,25 @@ class CreditCuepoints(BaseModel):
     prelogue: float
 
 class Rating(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     code: str
     system: str
     value: str
     descriptors: list[None]
 
 class AudioTrack(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     lang: str
     display_name: str
 
 class Manifest(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     url: str
     duration: int
 
 class VideoResource(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     audio_tracks: list[AudioTrack]
@@ -48,12 +55,41 @@ class VideoResource(BaseModel):
     generator_version: str
 
 class Monetization(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     cue_points: list[float]
 
 class Awards(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     items: list[None]
 
 class Images(BaseModel):
+    model_config = ConfigDict(defer_build=True)
+    backgrounds: list[str]
+    hero_16x9: list[str]
+    hero_422: list[str]
+    hero_feature: list[str]
+    hero_feature_desktop_tablet: list[str]
+    hero_feature_large_mobile: list[str]
+    hero_feature_small_mobile: list[str]
+    landscape_images: list[str]
+    linear_larger_poster: list[str]
+    posterarts: list[str]
+    title_art: list[str]
+
+class VideoMetadatum(BaseModel):
+    model_config = ConfigDict(defer_build=True)
+    type: str
+    codec: str
+    resolution: str
+
+class VideoPreview(BaseModel):
+    model_config = ConfigDict(defer_build=True)
+    source: str
+    url: str
+    uuid: UUID
+
+class Images1(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -66,17 +102,8 @@ class Images(BaseModel):
     posterarts: list[str]
     title_art: list[None]
 
-class VideoMetadatum(BaseModel):
-    type: str
-    codec: str
-    resolution: str
-
-class VideoPreview(BaseModel):
-    source: str
-    url: str
-    uuid: UUID
-
 class VideoResource1(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     type: str
     codec: str
     audio_tracks: list[AudioTrack]
@@ -87,70 +114,72 @@ class VideoResource1(BaseModel):
     generator_version: str
 
 class Child1(BaseModel):
-    is_cdc: bool
-    directors: list[str]
-    url: str
-    has_trailer: bool
-    air_datetime: None
-    series_id: str
-    creator_tensor_app: None
-    tubi_fields: dict[str, Any]
-    detailed_type: str
-    canonical_id: str
-    description: str
-    has_subtitle: bool
-    availability_ends: None
-    ratings: list[Rating]
-    internal_tags: list[None]
-    monetization: Monetization
-    video_renditions: list[None]
-    player_type: str
-    type: str
-    import_id: str
-    imdb_id: None
-    video_resources: list[VideoResource1]
-    lang: str
-    gracenote_id: str
-    trailers: list[None]
-    country: str
-    posterarts: list[str]
-    video_metadata: list[None]
-    needs_login: bool
-    video_previews: list[None]
-    content_orientation: str
-    partner_id: None
-    publisher_id: UUID
-    is_replay: bool
-    policy_match: bool
-    landscape_images: list[str]
+    model_config = ConfigDict(defer_build=True)
     episode_number: str
-    availability_duration: int
-    hero_images: list[str]
-    images: Images
-    id: str
-    updated_at: AwareDatetime
-    credit_cuepoints: CreditCuepoints
-    ad_languages: list[None]
-    imdb_fields: None
-    year: int
-    duration: int
-    version: int
-    backgrounds: list[str]
-    actors: list[str]
-    rt_fields: None
-    login_reason: str
-    subtitles: list[None]
+    internal_tags: list[None]
     version_id: str
-    availability_starts: AwareDatetime
-    thumbnails: list[str]
+    content_orientation: str
     awards: Awards
-    tags: list[str]
-    gn_fields: None
-    display_episode_number: str
-    title: str
+    player_type: str
+    is_replay: bool
+    canonical_id: str
     video_preview_url: str
+    description: str
+    gn_fields: None
+    lang: str
+    directors: list[str]
+    video_renditions: list[None]
+    images: Images1
+    import_id: str
+    duration: int
+    publisher_id: UUID
+    needs_login: bool
+    ratings: list[Rating]
+    availability_starts: AwareDatetime
+    series_id: str
+    year: int
+    has_trailer: bool
+    type: str
+    tubi_fields: dict[str, Any]
+    landscape_images: list[str]
+    video_previews: list[None]
+    display_episode_number: str
+    actors: list[str]
+    video_metadata: list[None]
+    monetization: Monetization
+    country: str
+    trailers: list[None]
+    video_resources: list[VideoResource1]
+    subtitles: list[Subtitle]
+    gracenote_id: str
+    backgrounds: list[str]
+    has_subtitle: bool
+    air_datetime: None
+    imdb_fields: None
+    ad_languages: list[None]
+    credit_cuepoints: CreditCuepoints
+    partner_id: str | None
+    id: str
+    title: str
+    policy_match: bool
+    creator_tensor_app: None
+    version: int
+    posterarts: list[str]
+    updated_at: AwareDatetime
+    hero_images: list[str]
+    availability_duration: int
+    rt_fields: None
+    tags: list[str]
+    imdb_id: None
+    thumbnails: list[str]
+    url: str
+    detailed_type: str
+    availability_ends: None
+    is_cdc: bool
+    login_reason: str
 
 class Child(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     id: str
     type: str
     title: str
@@ -158,6 +187,7 @@ class Child(BaseModel):
     posterarts: list[None]
 
 class ContentModel(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     imdb_fields: None
     channel_logo: str | None = None
     landscape_images: list[str]
@@ -179,7 +209,7 @@ class ContentModel(BaseModel):
     is_replay: bool
     channel_name: str | None = None
     thumbnails: list[str]
-    partner_id: None
+    partner_id: str | None
     country: str
     video_resources: list[VideoResource] | None = None
     needs_login: bool
@@ -227,8 +257,8 @@ class ContentModel(BaseModel):
     series_id: str | None = None
     display_episode_number: str | None = None
     episode_number: str | None = None
-    is_recurring: bool | None = None
     is_sequential: bool | None = None
+    is_recurring: bool | None = None
     children: list[Child] | None = None
     _raw_input: Any = PrivateAttr(default=None)
 

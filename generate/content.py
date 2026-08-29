@@ -6,17 +6,12 @@ from __future__ import annotations
 import logging
 
 from get_around import build_client_automatically
-from good_ass_pydantic_integrator import generate_model
 
 from generate.constants import FILES_PATH, PLUGI_PATH
-from generate.utils import download_if_missing
+from generate.utils import download_if_missing, load_ids, rebuild_model
 from plugi import Plugi
 
-CONTENT_IDS = [
-    "100004422",
-    "200288826",
-    "300018492",
-]
+CONTENT_IDS = load_ids("ContentModel")
 
 SEASON_CONTENT_ID = "300018492"
 SEASON = 2
@@ -40,7 +35,7 @@ def generate_content(client: Plugi) -> None:
         SEASON_NAME,
         lambda: client.content.download(SEASON_CONTENT_ID, season=SEASON),
     )
-    generate_model(FILES_PATH, PLUGI_PATH, "ContentModel")
+    rebuild_model(FILES_PATH, PLUGI_PATH, "ContentModel")
 
 
 if __name__ == "__main__":

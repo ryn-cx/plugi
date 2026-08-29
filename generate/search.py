@@ -6,13 +6,12 @@ from __future__ import annotations
 import logging
 
 from get_around import build_client_automatically
-from good_ass_pydantic_integrator import generate_model
 
 from generate.constants import FILES_PATH, PLUGI_PATH
-from generate.utils import download_if_missing
+from generate.utils import download_if_missing, load_ids, rebuild_model
 from plugi import Plugi
 
-QUERIES = ["drago"]
+QUERIES = load_ids("SearchModel")
 
 KIDS_MODE_QUERY = "drago"
 KIDS_MODE_NAME = f"{KIDS_MODE_QUERY} kids mode"
@@ -35,7 +34,7 @@ def generate_search(client: Plugi) -> None:
         KIDS_MODE_NAME,
         lambda: client.search.download(KIDS_MODE_QUERY, is_kids_mode=True),
     )
-    generate_model(FILES_PATH, PLUGI_PATH, "SearchModel")
+    rebuild_model(FILES_PATH, PLUGI_PATH, "SearchModel")
 
 
 if __name__ == "__main__":
