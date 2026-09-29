@@ -7,258 +7,258 @@ from pydantic import AwareDatetime, BaseModel, ConfigDict
 
 class Subtitle(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    url: str | None = None
-    lang: str | None = None
-    lang_alpha3: str | None = None
-    lang_translation: str | None = None
+    url: str | Any = Field(default=None, union_mode='left_to_right')
+    lang: str | Any = Field(default=None, union_mode='left_to_right')
+    lang_alpha3: str | Any = Field(default=None, union_mode='left_to_right')
+    lang_translation: str | Any = Field(default=None, union_mode='left_to_right')
 
 class CreditCuepoints(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    postlude: float | None = None
-    prologue: float | None = None
-    intro_start: float | None = None
-    intro_end: float | None = None
-    recap_start: float | None = None
-    recap_end: float | None = None
-    earlycredits_start: float | None = None
-    earlycredits_end: float | None = None
-    prelogue: float | None = None
+    postlude: float | Any = Field(default=None, union_mode='left_to_right')
+    prologue: float | Any = Field(default=None, union_mode='left_to_right')
+    intro_start: float | Any = Field(default=None, union_mode='left_to_right')
+    intro_end: float | Any = Field(default=None, union_mode='left_to_right')
+    recap_start: float | Any = Field(default=None, union_mode='left_to_right')
+    recap_end: float | Any = Field(default=None, union_mode='left_to_right')
+    earlycredits_start: float | Any = Field(default=None, union_mode='left_to_right')
+    earlycredits_end: float | Any = Field(default=None, union_mode='left_to_right')
+    prelogue: float | Any = Field(default=None, union_mode='left_to_right')
 
 class Rating(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    code: str | None = None
-    system: str | None = None
-    value: str | None = None
-    descriptors: list[Any] | None = None
+    code: str | Any = Field(default=None, union_mode='left_to_right')
+    system: str | Any = Field(default=None, union_mode='left_to_right')
+    value: str | Any = Field(default=None, union_mode='left_to_right')
+    descriptors: list[Any] | Any = Field(default=None, union_mode='left_to_right')
 
 class AudioTrack(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    type: str | None = None
-    lang: str | None = None
-    display_name: str | None = None
+    type: str | Any = Field(default=None, union_mode='left_to_right')
+    lang: str | Any = Field(default=None, union_mode='left_to_right')
+    display_name: str | Any = Field(default=None, union_mode='left_to_right')
 
 class Manifest(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    url: str | None = None
-    duration: int | None = None
+    url: str | Any = Field(default=None, union_mode='left_to_right')
+    duration: int | Any = Field(default=None, union_mode='left_to_right')
 
 class VideoResource(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    type: str | None = None
-    codec: str | None = None
-    audio_tracks: list[AudioTrack] | None = None
-    resolution: str | None = None
-    manifest: Manifest | None = None
-    titan_version: str | None = None
-    ssai_version: str | None = None
-    generator_version: str | None = None
+    type: str | Any = Field(default=None, union_mode='left_to_right')
+    codec: str | Any = Field(default=None, union_mode='left_to_right')
+    audio_tracks: list[AudioTrack] | Any = Field(default=None, union_mode='left_to_right')
+    resolution: str | Any = Field(default=None, union_mode='left_to_right')
+    manifest: Manifest | Any = Field(default=None, union_mode='left_to_right')
+    titan_version: str | Any = Field(default=None, union_mode='left_to_right')
+    ssai_version: str | Any = Field(default=None, union_mode='left_to_right')
+    generator_version: str | Any = Field(default=None, union_mode='left_to_right')
 
 class Monetization(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    cue_points: list[float] | None = None
+    cue_points: list[float] | Any = Field(default=None, union_mode='left_to_right')
 
 class Awards(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    items: list[Any] | None = None
+    items: list[Any] | Any = Field(default=None, union_mode='left_to_right')
 
 class Images(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    backgrounds: list[str] | None = None
-    hero_16x9: list[str] | None = None
-    hero_422: list[str] | None = None
-    hero_feature: list[str] | None = None
-    hero_feature_desktop_tablet: list[str] | None = None
-    hero_feature_large_mobile: list[str] | None = None
-    hero_feature_small_mobile: list[str] | None = None
-    landscape_images: list[str] | None = None
-    linear_larger_poster: list[str] | None = None
-    posterarts: list[str] | None = None
-    title_art: list[str] | None = None
+    backgrounds: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_16x9: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_422: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature_desktop_tablet: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature_large_mobile: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature_small_mobile: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    landscape_images: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    linear_larger_poster: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    posterarts: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    title_art: list[str] | Any = Field(default=None, union_mode='left_to_right')
 
 class VideoMetadatum(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    type: str | None = None
-    codec: str | None = None
-    resolution: str | None = None
+    type: str | Any = Field(default=None, union_mode='left_to_right')
+    codec: str | Any = Field(default=None, union_mode='left_to_right')
+    resolution: str | Any = Field(default=None, union_mode='left_to_right')
 
 class VideoPreview(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    source: str | None = None
-    url: str | None = None
-    uuid: UUID | None = None
+    source: str | Any = Field(default=None, union_mode='left_to_right')
+    url: str | Any = Field(default=None, union_mode='left_to_right')
+    uuid: UUID | Any = Field(default=None, union_mode='left_to_right')
 
 class Images1(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    backgrounds: list[str] | None = None
-    hero_16x9: list[str] | None = None
-    hero_422: list[str] | None = None
-    hero_feature: list[str] | None = None
-    hero_feature_desktop_tablet: list[str] | None = None
-    hero_feature_large_mobile: list[str] | None = None
-    hero_feature_small_mobile: list[str] | None = None
-    landscape_images: list[str] | None = None
-    linear_larger_poster: list[str] | None = None
-    posterarts: list[str] | None = None
-    title_art: list[Any] | None = None
+    backgrounds: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_16x9: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_422: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature_desktop_tablet: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature_large_mobile: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    hero_feature_small_mobile: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    landscape_images: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    linear_larger_poster: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    posterarts: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    title_art: list[Any] | Any = Field(default=None, union_mode='left_to_right')
 
 class VideoResource1(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    type: str | None = None
-    codec: str | None = None
-    audio_tracks: list[AudioTrack] | None = None
-    resolution: str | None = None
-    manifest: Manifest | None = None
-    titan_version: str | None = None
-    ssai_version: str | None = None
-    generator_version: str | None = None
+    type: str | Any = Field(default=None, union_mode='left_to_right')
+    codec: str | Any = Field(default=None, union_mode='left_to_right')
+    audio_tracks: list[AudioTrack] | Any = Field(default=None, union_mode='left_to_right')
+    resolution: str | Any = Field(default=None, union_mode='left_to_right')
+    manifest: Manifest | Any = Field(default=None, union_mode='left_to_right')
+    titan_version: str | Any = Field(default=None, union_mode='left_to_right')
+    ssai_version: str | Any = Field(default=None, union_mode='left_to_right')
+    generator_version: str | Any = Field(default=None, union_mode='left_to_right')
 
 class Child1(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    episode_number: str | None = None
-    internal_tags: list[Any] | None = None
-    version_id: str | None = None
-    content_orientation: str | None = None
-    awards: Awards | None = None
-    player_type: str | None = None
-    is_replay: bool | None = None
-    canonical_id: str | None = None
-    video_preview_url: str | None = None
-    description: str | None = None
+    episode_number: str | Any = Field(default=None, union_mode='left_to_right')
+    internal_tags: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    version_id: str | Any = Field(default=None, union_mode='left_to_right')
+    content_orientation: str | Any = Field(default=None, union_mode='left_to_right')
+    awards: Awards | Any = Field(default=None, union_mode='left_to_right')
+    player_type: str | Any = Field(default=None, union_mode='left_to_right')
+    is_replay: bool | Any = Field(default=None, union_mode='left_to_right')
+    canonical_id: str | Any = Field(default=None, union_mode='left_to_right')
+    video_preview_url: str | Any = Field(default=None, union_mode='left_to_right')
+    description: str | Any = Field(default=None, union_mode='left_to_right')
     gn_fields: Any | None = None
-    lang: str | None = None
-    directors: list[str] | None = None
-    video_renditions: list[Any] | None = None
-    images: Images1 | None = None
-    import_id: str | None = None
-    duration: int | None = None
-    publisher_id: UUID | None = None
-    needs_login: bool | None = None
-    ratings: list[Rating] | None = None
-    availability_starts: AwareDatetime | None = None
-    series_id: str | None = None
-    year: int | None = None
-    has_trailer: bool | None = None
-    type: str | None = None
-    tubi_fields: dict[str, Any] | None = None
-    landscape_images: list[str] | None = None
-    video_previews: list[Any] | None = None
-    display_episode_number: str | None = None
-    actors: list[str] | None = None
-    video_metadata: list[Any] | None = None
-    monetization: Monetization | None = None
-    country: str | None = None
-    trailers: list[Any] | None = None
-    video_resources: list[VideoResource1] | None = None
-    subtitles: list[Subtitle] | None = None
-    gracenote_id: str | None = None
-    backgrounds: list[str] | None = None
-    has_subtitle: bool | None = None
+    lang: str | Any = Field(default=None, union_mode='left_to_right')
+    directors: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    video_renditions: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    images: Images1 | Any = Field(default=None, union_mode='left_to_right')
+    import_id: str | Any = Field(default=None, union_mode='left_to_right')
+    duration: int | Any = Field(default=None, union_mode='left_to_right')
+    publisher_id: UUID | Any = Field(default=None, union_mode='left_to_right')
+    needs_login: bool | Any = Field(default=None, union_mode='left_to_right')
+    ratings: list[Rating] | Any = Field(default=None, union_mode='left_to_right')
+    availability_starts: AwareDatetime | Any = Field(default=None, union_mode='left_to_right')
+    series_id: str | Any = Field(default=None, union_mode='left_to_right')
+    year: int | Any = Field(default=None, union_mode='left_to_right')
+    has_trailer: bool | Any = Field(default=None, union_mode='left_to_right')
+    type: str | Any = Field(default=None, union_mode='left_to_right')
+    tubi_fields: dict[str, Any] | Any = Field(default=None, union_mode='left_to_right')
+    landscape_images: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    video_previews: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    display_episode_number: str | Any = Field(default=None, union_mode='left_to_right')
+    actors: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    video_metadata: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    monetization: Monetization | Any = Field(default=None, union_mode='left_to_right')
+    country: str | Any = Field(default=None, union_mode='left_to_right')
+    trailers: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    video_resources: list[VideoResource1] | Any = Field(default=None, union_mode='left_to_right')
+    subtitles: list[Subtitle] | Any = Field(default=None, union_mode='left_to_right')
+    gracenote_id: str | Any = Field(default=None, union_mode='left_to_right')
+    backgrounds: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    has_subtitle: bool | Any = Field(default=None, union_mode='left_to_right')
     air_datetime: Any | None = None
     imdb_fields: Any | None = None
-    ad_languages: list[Any] | None = None
-    credit_cuepoints: CreditCuepoints | None = None
-    partner_id: str | None = None
-    id: str | None = None
-    title: str | None = None
-    policy_match: bool | None = None
+    ad_languages: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    credit_cuepoints: CreditCuepoints | Any = Field(default=None, union_mode='left_to_right')
+    partner_id: str | Any = Field(default=None, union_mode='left_to_right')
+    id: str | Any = Field(default=None, union_mode='left_to_right')
+    title: str | Any = Field(default=None, union_mode='left_to_right')
+    policy_match: bool | Any = Field(default=None, union_mode='left_to_right')
     creator_tensor_app: Any | None = None
-    version: int | None = None
-    posterarts: list[str] | None = None
-    updated_at: AwareDatetime | None = None
-    hero_images: list[str] | None = None
-    availability_duration: int | None = None
+    version: int | Any = Field(default=None, union_mode='left_to_right')
+    posterarts: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    updated_at: AwareDatetime | Any = Field(default=None, union_mode='left_to_right')
+    hero_images: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    availability_duration: int | Any = Field(default=None, union_mode='left_to_right')
     rt_fields: Any | None = None
-    tags: list[str] | None = None
+    tags: list[str] | Any = Field(default=None, union_mode='left_to_right')
     imdb_id: Any | None = None
-    thumbnails: list[str] | None = None
-    url: str | None = None
-    detailed_type: str | None = None
+    thumbnails: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    url: str | Any = Field(default=None, union_mode='left_to_right')
+    detailed_type: str | Any = Field(default=None, union_mode='left_to_right')
     availability_ends: Any | None = None
-    is_cdc: bool | None = None
-    login_reason: str | None = None
+    is_cdc: bool | Any = Field(default=None, union_mode='left_to_right')
+    login_reason: str | Any = Field(default=None, union_mode='left_to_right')
 
 class Child(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
-    id: str | None = None
-    type: str | None = None
-    title: str | None = None
-    children: list[Child1] | None = None
-    posterarts: list[Any] | None = None
+    id: str | Any = Field(default=None, union_mode='left_to_right')
+    type: str | Any = Field(default=None, union_mode='left_to_right')
+    title: str | Any = Field(default=None, union_mode='left_to_right')
+    children: list[Child1] | Any = Field(default=None, union_mode='left_to_right')
+    posterarts: list[Any] | Any = Field(default=None, union_mode='left_to_right')
 
 class ContentModel(BaseModel):
     model_config = ConfigDict(extra='ignore', defer_build=True)
     imdb_fields: Any | None = None
-    channel_logo: str | None = None
-    landscape_images: list[str] | None = None
-    url: str | None = None
-    subtitles: list[Subtitle] | None = None
+    channel_logo: str | Any = Field(default=None, union_mode='left_to_right')
+    landscape_images: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    url: str | Any = Field(default=None, union_mode='left_to_right')
+    subtitles: list[Subtitle] | Any = Field(default=None, union_mode='left_to_right')
     gn_fields: Any | None = None
-    gracenote_id: str | None = None
-    is_cdc: bool | None = None
-    tubi_fields: dict[str, Any] | None = None
-    player_type: str | None = None
-    credit_cuepoints: CreditCuepoints | None = None
-    lang: str | None = None
-    has_trailer: bool | None = None
-    description: str | None = None
-    valid_duration: int | None = None
-    ratings: list[Rating] | None = None
-    detailed_type: str | None = None
-    channel_id: str | None = None
-    is_replay: bool | None = None
-    channel_name: str | None = None
-    thumbnails: list[str] | None = None
-    partner_id: str | None = None
-    country: str | None = None
-    video_resources: list[VideoResource] | None = None
-    needs_login: bool | None = None
-    type: str | None = None
-    channel_logo_long: str | None = None
-    monetization: Monetization | None = None
-    version_id: str | None = None
-    actors: list[str] | None = None
-    internal_tags: list[Any] | None = None
-    video_renditions: list[Any] | None = None
-    availability_duration: int | None = None
-    publisher_id: UUID | str | None = Field(default=None, union_mode='left_to_right')
-    canonical_id: str | None = None
+    gracenote_id: str | Any = Field(default=None, union_mode='left_to_right')
+    is_cdc: bool | Any = Field(default=None, union_mode='left_to_right')
+    tubi_fields: dict[str, Any] | Any = Field(default=None, union_mode='left_to_right')
+    player_type: str | Any = Field(default=None, union_mode='left_to_right')
+    credit_cuepoints: CreditCuepoints | Any = Field(default=None, union_mode='left_to_right')
+    lang: str | Any = Field(default=None, union_mode='left_to_right')
+    has_trailer: bool | Any = Field(default=None, union_mode='left_to_right')
+    description: str | Any = Field(default=None, union_mode='left_to_right')
+    valid_duration: int | Any = Field(default=None, union_mode='left_to_right')
+    ratings: list[Rating] | Any = Field(default=None, union_mode='left_to_right')
+    detailed_type: str | Any = Field(default=None, union_mode='left_to_right')
+    channel_id: str | Any = Field(default=None, union_mode='left_to_right')
+    is_replay: bool | Any = Field(default=None, union_mode='left_to_right')
+    channel_name: str | Any = Field(default=None, union_mode='left_to_right')
+    thumbnails: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    partner_id: str | Any = Field(default=None, union_mode='left_to_right')
+    country: str | Any = Field(default=None, union_mode='left_to_right')
+    video_resources: list[VideoResource] | Any = Field(default=None, union_mode='left_to_right')
+    needs_login: bool | Any = Field(default=None, union_mode='left_to_right')
+    type: str | Any = Field(default=None, union_mode='left_to_right')
+    channel_logo_long: str | Any = Field(default=None, union_mode='left_to_right')
+    monetization: Monetization | Any = Field(default=None, union_mode='left_to_right')
+    version_id: str | Any = Field(default=None, union_mode='left_to_right')
+    actors: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    internal_tags: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    video_renditions: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    availability_duration: int | Any = Field(default=None, union_mode='left_to_right')
+    publisher_id: UUID | str | Any = Field(default=None, union_mode='left_to_right')
+    canonical_id: str | Any = Field(default=None, union_mode='left_to_right')
     air_datetime: Any | None = None
-    channel_logo_short: str | None = None
-    posterarts: list[str] | None = None
-    trailers: list[Any] | None = None
+    channel_logo_short: str | Any = Field(default=None, union_mode='left_to_right')
+    posterarts: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    trailers: list[Any] | Any = Field(default=None, union_mode='left_to_right')
     availability_ends: Any | None = None
-    policy_match: bool | None = None
-    login_reason: str | None = None
-    directors: list[str] | None = None
+    policy_match: bool | Any = Field(default=None, union_mode='left_to_right')
+    login_reason: str | Any = Field(default=None, union_mode='left_to_right')
+    directors: list[str] | Any = Field(default=None, union_mode='left_to_right')
     rt_fields: Any | None = None
-    updated_at: AwareDatetime | None = None
-    id: str | None = None
-    channel_logo_center: str | None = None
-    awards: Awards | None = None
-    title: str | None = None
-    import_id: str | None = None
-    ad_languages: list[Any] | None = None
-    duration: int | None = None
-    version: int | None = None
-    video_preview_url: str | None = None
-    content_orientation: str | None = None
-    availability_starts: Any | AwareDatetime | None = None
-    images: Images | None = None
-    hero_images: list[str] | None = None
-    has_subtitle: bool | None = None
-    video_metadata: list[VideoMetadatum] | None = None
-    tags: list[str] | None = None
-    imdb_id: str | None = None
-    backgrounds: list[str] | None = None
-    video_previews: list[VideoPreview] | None = None
+    updated_at: AwareDatetime | Any = Field(default=None, union_mode='left_to_right')
+    id: str | Any = Field(default=None, union_mode='left_to_right')
+    channel_logo_center: str | Any = Field(default=None, union_mode='left_to_right')
+    awards: Awards | Any = Field(default=None, union_mode='left_to_right')
+    title: str | Any = Field(default=None, union_mode='left_to_right')
+    import_id: str | Any = Field(default=None, union_mode='left_to_right')
+    ad_languages: list[Any] | Any = Field(default=None, union_mode='left_to_right')
+    duration: int | Any = Field(default=None, union_mode='left_to_right')
+    version: int | Any = Field(default=None, union_mode='left_to_right')
+    video_preview_url: str | Any = Field(default=None, union_mode='left_to_right')
+    content_orientation: str | Any = Field(default=None, union_mode='left_to_right')
+    availability_starts: AwareDatetime | Any = Field(default=None, union_mode='left_to_right')
+    images: Images | Any = Field(default=None, union_mode='left_to_right')
+    hero_images: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    has_subtitle: bool | Any = Field(default=None, union_mode='left_to_right')
+    video_metadata: list[VideoMetadatum] | Any = Field(default=None, union_mode='left_to_right')
+    tags: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    imdb_id: str | Any = Field(default=None, union_mode='left_to_right')
+    backgrounds: list[str] | Any = Field(default=None, union_mode='left_to_right')
+    video_previews: list[VideoPreview] | Any = Field(default=None, union_mode='left_to_right')
     creator_tensor_app: Any | None = None
-    year: int | None = None
-    series_id: str | None = None
-    display_episode_number: str | None = None
-    episode_number: str | None = None
-    is_sequential: bool | None = None
-    is_recurring: bool | None = None
-    children: list[Child] | None = None
+    year: int | Any = Field(default=None, union_mode='left_to_right')
+    series_id: str | Any = Field(default=None, union_mode='left_to_right')
+    display_episode_number: str | Any = Field(default=None, union_mode='left_to_right')
+    episode_number: str | Any = Field(default=None, union_mode='left_to_right')
+    is_sequential: bool | Any = Field(default=None, union_mode='left_to_right')
+    is_recurring: bool | Any = Field(default=None, union_mode='left_to_right')
+    children: list[Child] | Any = Field(default=None, union_mode='left_to_right')
     _raw_input: Any = PrivateAttr(default=None)
 
     @model_validator(mode='wrap')

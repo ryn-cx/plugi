@@ -15,7 +15,7 @@ logger.addHandler(NullHandler())
 
 # TODO: Validate
 class Search(BaseEndpoint):
-    """Manage the search file.
+    """Contains the search.
 
     Every match is in `contents`, keyed by content id, and the order they are
     meant to be shown in is a list of references in `containers`. A match is a
@@ -68,7 +68,7 @@ class Search(BaseEndpoint):
         include_apps: bool = True,
         is_kids_mode: bool = False,
     ) -> SearchModel:
-        """Run the search and return the model it is read into."""
+        """Download and parse the search file."""
         log_id = self.get_log_id(self.__call__, locals())
         return self.load(
             self.download(
@@ -126,5 +126,5 @@ class Search(BaseEndpoint):
 
     # TODO: Validate
     def load(self, data: str, log_id: str = "") -> SearchModel:
-        """Read a downloaded search file into its model."""
+        """Load a search file into its model."""
         return model_validate_json(data, log_id or self.default_log_id)

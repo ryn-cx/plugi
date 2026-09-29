@@ -19,7 +19,7 @@ PAGE_SIZE_IN_SEASON = 20
 
 # TODO: Validate
 class Content(BaseEndpoint):
-    """Manage the content file.
+    """Contains the content.
 
     A movie, a series, or a single episode are all content, the `type` field of
     the response tells them apart. A series embeds its seasons and episodes in
@@ -69,7 +69,7 @@ class Content(BaseEndpoint):
         page_size_in_season: int = PAGE_SIZE_IN_SEASON,
         include_channels: bool = True,
     ) -> ContentModel:
-        """Look the content up and return the model it is read into."""
+        """Download and parse the content file."""
         log_id = self.get_log_id(self.__call__, locals())
         return self.load(
             self.download(
@@ -144,5 +144,5 @@ class Content(BaseEndpoint):
 
     # TODO: Validate
     def load(self, data: str, log_id: str = "") -> ContentModel:
-        """Read a downloaded content file into its model."""
+        """Load a content file into its model."""
         return model_validate_json(data, log_id or self.default_log_id)
