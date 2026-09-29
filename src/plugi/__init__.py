@@ -15,6 +15,7 @@ from plugi import authorization
 from plugi.content import Content
 from plugi.exceptions import AuthorizationError, HTTPError, ResourceNotFoundError
 from plugi.search import Search
+from plugi.sitemap import Sitemap, SitemapIndex
 
 logger = getLogger(__name__)
 logger.addHandler(NullHandler())
@@ -52,6 +53,8 @@ class Plugi:
 
         self.content = Content(self)
         self.search = Search(self)
+        self.sitemap_index = SitemapIndex(self)
+        self.sitemap = Sitemap(self)
 
     # TODO: Validate
     def _headers(self) -> dict[str, str]:
@@ -161,6 +164,21 @@ class Plugi:
         url = f"https://{domain}/{endpoint}"
         start = time.monotonic()
         response = self.get_around_client.get(url, params=params, headers=headers)
+
+        if response.status_code != HTTPStatus.OK:
+            if response.status_code == HTTPStatus.NOT_FOUND:
+                raise ResourceNotFoundError(response.status_code, response.text)
+            raise HTTPError(response.status_code, response.text)
+
+        logger.debug("Downloaded %s (%.4f s)", log_id, time.monotonic() - start)
+        return response.text
+
+    # TODO: Validate
+    def download_website(self, path: str, log_id: str) -> str:
+        logger.debug("Downloading: %s", log_id)
+        url = f"{WEBSITE}/{path}"
+        start = time.monotonic()
+        response = self.get_around_client.get(url)
 
         if response.status_code != HTTPStatus.OK:
             if response.status_code == HTTPStatus.NOT_FOUND:
