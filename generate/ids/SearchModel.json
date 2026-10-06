@@ -1,9 +1,9 @@
-{
-  "drago": {
+[
+  {
     "query": "drago"
   },
-  "drago kids mode": {
+  {
     "query": "drago",
     "is_kids_mode": true
   }
-}
+]
