@@ -13,6 +13,10 @@ class Subtitle(BaseModel):
     lang_alpha3: str
     lang_translation: str
 
+class TubiFields(BaseModel):
+    model_config = ConfigDict(defer_build=True)
+    content_sourcing: list[str] | None = None
+
 class CreditCuepoints(BaseModel):
     model_config = ConfigDict(defer_build=True)
     postlude: float
@@ -90,6 +94,18 @@ class VideoPreview(BaseModel):
 
 class Images1(BaseModel):
     model_config = ConfigDict(defer_build=True)
+    logo: list[str]
+    title_art: list[None]
+
+class CreatorTensorApp(BaseModel):
+    model_config = ConfigDict(defer_build=True)
+    id: str
+    type: str
+    title: str
+    images: Images1
+
+class Images2(BaseModel):
+    model_config = ConfigDict(defer_build=True)
     backgrounds: list[str]
     hero_16x9: list[str]
     hero_422: list[str]
@@ -116,7 +132,7 @@ class VideoResource1(BaseModel):
 class Child1(BaseModel):
     model_config = ConfigDict(defer_build=True)
     episode_number: str
-    internal_tags: list[None]
+    internal_tags: list[str]
     version_id: str
     content_orientation: str
     awards: Awards
@@ -129,7 +145,7 @@ class Child1(BaseModel):
     lang: str
     directors: list[str]
     video_renditions: list[None]
-    images: Images1
+    images: Images2
     import_id: str
     duration: int
     publisher_id: UUID
@@ -140,7 +156,7 @@ class Child1(BaseModel):
     year: int
     has_trailer: bool
     type: str
-    tubi_fields: dict[str, Any]
+    tubi_fields: TubiFields
     landscape_images: list[str]
     video_previews: list[None]
     display_episode_number: str
@@ -196,7 +212,7 @@ class ContentModel(BaseModel):
     gn_fields: None
     gracenote_id: str | None
     is_cdc: bool
-    tubi_fields: dict[str, Any]
+    tubi_fields: TubiFields
     player_type: str
     credit_cuepoints: CreditCuepoints | None = None
     lang: str
@@ -218,7 +234,7 @@ class ContentModel(BaseModel):
     monetization: Monetization | None = None
     version_id: str
     actors: list[str]
-    internal_tags: list[None]
+    internal_tags: list[str]
     video_renditions: list[None]
     availability_duration: int | None
     publisher_id: UUID | str = Field(union_mode='left_to_right')
@@ -252,7 +268,7 @@ class ContentModel(BaseModel):
     imdb_id: str | None
     backgrounds: list[str]
     video_previews: list[VideoPreview]
-    creator_tensor_app: None
+    creator_tensor_app: CreatorTensorApp | None
     year: int
     series_id: str | None = None
     display_episode_number: str | None = None
